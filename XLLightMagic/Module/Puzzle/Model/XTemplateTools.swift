@@ -7,10 +7,11 @@
 
 import HandyJSON
 import UIKit
-//编辑的功能类
-class XTemplateManager{
+//编辑的工具类
+class XTemplateTools{
     
-    //加载模板
+    //todo:根据相册图片个数，返回当前支持的模板布局
+    //模板Json->模型
     class func loadJSONAsTemplate(jsonName: String) -> XTemplateModel? {
          guard let jsonURL = Bundle.main.url(forResource: jsonName, withExtension: "json") else {
              print("JSON file '\(jsonName)' not found.")

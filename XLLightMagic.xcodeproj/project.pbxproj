@@ -25,6 +25,7 @@
 		840EC8292BAAD0620049B06A /* XNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840EC8282BAAD0620049B06A /* XNavigationController.swift */; };
 		840EC82B2BAAD0D30049B06A /* XWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840EC82A2BAAD0D30049B06A /* XWebViewController.swift */; };
 		840EC82D2BAAD7670049B06A /* TestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840EC82C2BAAD7670049B06A /* TestVC.swift */; };
+		841CE1192BB276AD0031A93A /* XProportionEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841CE1182BB276AD0031A93A /* XProportionEnum.swift */; };
 		849144CD2BAFD7FA00444DD1 /* XBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849144CC2BAFD7FA00444DD1 /* XBaseView.swift */; };
 		849144CF2BAFDA4300444DD1 /* XBaseEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849144CE2BAFDA4300444DD1 /* XBaseEditView.swift */; };
 		849144D12BAFDCC500444DD1 /* UIViewFrameExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849144D02BAFDCC500444DD1 /* UIViewFrameExtension.swift */; };
@@ -108,7 +109,7 @@
 		84BDCFE22BB11FEC00F43383 /* XBoardListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BDCFE12BB11FEC00F43383 /* XBoardListView.swift */; };
 		84BDCFE42BB16EF200F43383 /* number_three_style_3.json in Resources */ = {isa = PBXBuildFile; fileRef = 84BDCFE32BB16EF200F43383 /* number_three_style_3.json */; };
 		84BDCFE62BB1704000F43383 /* XTemplateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BDCFE52BB1704000F43383 /* XTemplateModel.swift */; };
-		84BDCFE82BB179F100F43383 /* XTemplateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BDCFE72BB179F100F43383 /* XTemplateManager.swift */; };
+		84BDCFE82BB179F100F43383 /* XTemplateTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BDCFE72BB179F100F43383 /* XTemplateTools.swift */; };
 		84CB9E902BAADF5F00E29794 /* XModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CB9E8F2BAADF5F00E29794 /* XModel.swift */; };
 		84CB9E922BAAE30900E29794 /* XAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CB9E912BAAE30900E29794 /* XAPI.swift */; };
 		84CB9E962BABD55800E29794 /* XBaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CB9E952BABD55800E29794 /* XBaseTableViewCell.swift */; };
@@ -142,6 +143,7 @@
 		840EC8282BAAD0620049B06A /* XNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XNavigationController.swift; sourceTree = "<group>"; };
 		840EC82A2BAAD0D30049B06A /* XWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XWebViewController.swift; sourceTree = "<group>"; };
 		840EC82C2BAAD7670049B06A /* TestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestVC.swift; sourceTree = "<group>"; };
+		841CE1182BB276AD0031A93A /* XProportionEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XProportionEnum.swift; sourceTree = "<group>"; };
 		849144CC2BAFD7FA00444DD1 /* XBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XBaseView.swift; sourceTree = "<group>"; };
 		849144CE2BAFDA4300444DD1 /* XBaseEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XBaseEditView.swift; sourceTree = "<group>"; };
 		849144D02BAFDCC500444DD1 /* UIViewFrameExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewFrameExtension.swift; sourceTree = "<group>"; };
@@ -225,7 +227,7 @@
 		84BDCFE12BB11FEC00F43383 /* XBoardListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XBoardListView.swift; sourceTree = "<group>"; };
 		84BDCFE32BB16EF200F43383 /* number_three_style_3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = number_three_style_3.json; sourceTree = "<group>"; };
 		84BDCFE52BB1704000F43383 /* XTemplateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XTemplateModel.swift; sourceTree = "<group>"; };
-		84BDCFE72BB179F100F43383 /* XTemplateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XTemplateManager.swift; sourceTree = "<group>"; };
+		84BDCFE72BB179F100F43383 /* XTemplateTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XTemplateTools.swift; sourceTree = "<group>"; };
 		84CB9E8F2BAADF5F00E29794 /* XModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XModel.swift; sourceTree = "<group>"; };
 		84CB9E912BAAE30900E29794 /* XAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XAPI.swift; sourceTree = "<group>"; };
 		84CB9E952BABD55800E29794 /* XBaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XBaseTableViewCell.swift; sourceTree = "<group>"; };
@@ -331,10 +333,7 @@
 		840EC80D2BAAC75B0049B06A /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				849144D72BAFF7D200444DD1 /* XEditInfo.swift */,
 				84CB9E8F2BAADF5F00E29794 /* XModel.swift */,
-				84BDCFE52BB1704000F43383 /* XTemplateModel.swift */,
-				84BDCFE72BB179F100F43383 /* XTemplateManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -361,11 +360,22 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
+		841CE1172BB275C10031A93A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				849144D72BAFF7D200444DD1 /* XEditInfo.swift */,
+				84BDCFE52BB1704000F43383 /* XTemplateModel.swift */,
+				84BDCFE72BB179F100F43383 /* XTemplateTools.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		849144D42BAFF1BE00444DD1 /* Common */ = {
 			isa = PBXGroup;
 			children = (
 				840EC8122BAACBC10049B06A /* Global.swift */,
 				849144D52BAFF1F900444DD1 /* CommonEnum.swift */,
+				841CE1182BB276AD0031A93A /* XProportionEnum.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -552,6 +562,7 @@
 		84CB9E9C2BAC1FC300E29794 /* Puzzle */ = {
 			isa = PBXGroup;
 			children = (
+				841CE1172BB275C10031A93A /* Model */,
 				84BDCFDE2BB11E2100F43383 /* ViewController */,
 				84BDCFDD2BB11E1900F43383 /* VIew */,
 			);
@@ -762,9 +773,10 @@
 				840EC8132BAACBC10049B06A /* Global.swift in Sources */,
 				84CB9E9E2BAC20D300E29794 /* XTestImageEditView.swift in Sources */,
 				840EC8232BAACC980049B06A /* DispatchQueueExtension.swift in Sources */,
-				84BDCFE82BB179F100F43383 /* XTemplateManager.swift in Sources */,
+				84BDCFE82BB179F100F43383 /* XTemplateTools.swift in Sources */,
 				840EC8242BAACC980049B06A /* DictionaryExtension.swift in Sources */,
 				840EC8272BAACF9D0049B06A /* XTabBarController.swift in Sources */,
+				841CE1192BB276AD0031A93A /* XProportionEnum.swift in Sources */,
 				840EC81D2BAACC980049B06A /* ArrayExtensions.swift in Sources */,
 				849144CD2BAFD7FA00444DD1 /* XBaseView.swift in Sources */,
 				84CB9E962BABD55800E29794 /* XBaseTableViewCell.swift in Sources */,

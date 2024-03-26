@@ -82,10 +82,10 @@ extension TestVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        if(indexPath.row==0){
-            let puzzleVC = XPuzzleViewController()
-            navigationController?.pushViewController(puzzleVC, animated: false)
-        }
+//        if(indexPath.row==0){
+//            let puzzleVC = XPuzzleViewController()
+//            navigationController?.pushViewController(puzzleVC, animated: false)
+//        }
         if(indexPath.row==1){
             
             let ps = ZLPhotoPreviewSheet()
@@ -95,8 +95,7 @@ extension TestVC: UITableViewDelegate, UITableViewDataSource {
                 xLog("\(isOriginal)")
                 let images = results.map{ $0.image }
                 
-                let puzzleVC = XPuzzleViewController()
-                puzzleVC.puzzleImages = images
+                let puzzleVC = XPuzzleViewController(editInfo: XEditInfo(images: images))
                 self.navigationController?.pushViewController(puzzleVC, animated: false)
                 
             }

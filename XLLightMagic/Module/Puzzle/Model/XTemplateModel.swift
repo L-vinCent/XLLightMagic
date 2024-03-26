@@ -6,7 +6,7 @@
 //
 
 import HandyJSON
-
+//模板模型
 struct XTemplateModel: HandyJSON {
     var name: String??
     var version: String?

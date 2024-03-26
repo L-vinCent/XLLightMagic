@@ -11,7 +11,9 @@ import UIKit
 class XPuzzleViewController:XBaseViewController{
     
 
-    public var puzzleImages:[UIImage]?
+//    public var puzzleImages:[UIImage]?
+    
+    public var editInfo:XEditInfo
     
     private lazy var contentView: UIView = {
         let view = UIView()
@@ -20,8 +22,7 @@ class XPuzzleViewController:XBaseViewController{
     }()
 
     private lazy var editView: XNormalLayoutView = {
-        let view = XNormalLayoutView(images: self.puzzleImages)
-        
+        let view = XNormalLayoutView(images: editInfo.images)
         return view
     }()
     
@@ -43,15 +44,21 @@ class XPuzzleViewController:XBaseViewController{
         super.viewDidLoad()
         // 初始化 XImageEditView
         
-        
         let styleName = "number_three_style_3"
-        guard let tempate = XTemplateManager.loadJSONAsTemplate(jsonName: styleName) else {return}
-//        guard let ratioH = tempate.ratioH,
-//              let ratioW = tempate.ratioW else { return }
-//        let size = calculateEditViewSize(ratioW: ratioW, ratioH: ratioH)
+        guard let tempate = XTemplateTools.loadJSONAsTemplate(jsonName: styleName) else {return}
         self.editView.template = tempate
         
     }
+    
+    init(editInfo: XEditInfo) {
+        self.editInfo = editInfo
+        super.init(nibName: nil, bundle: nil)
+    }
+                        
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+                        
     
     override func configUI() {
         
@@ -68,11 +75,12 @@ class XPuzzleViewController:XBaseViewController{
             make.bottom.equalToSuperview().offset(-UIDevice.xp_safeDistanceBottom())
             make.height.equalTo(50)
         }
-        //默认按3:4的比例初始化
+        //默认按1:1的比例初始化
+        let proportion = editInfo.proportion
         editView.snp.makeConstraints {
             $0.center.equalToSuperview() // 将 editView 放置在父视图中心
             $0.width.equalTo(contentView.snp.width) // 设置 editView 的高度与父视图相同
-            $0.height.equalTo(contentView.snp.width).multipliedBy(4.0 / 3.0) // 设置 editView 的宽度为父视图高度的3/4
+            $0.height.equalTo(contentView.snp.width).multipliedBy(proportion.toRadio()) // 设置 editView 的宽度为父视图高度的3/4
         }
         
     }

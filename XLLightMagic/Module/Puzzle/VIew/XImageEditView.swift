@@ -11,7 +11,14 @@ import UIKit
 class XImageEditView: XBaseView {
     
     // MARK: - Properties
-    
+    //操作状态
+    var operationState: Bool = false{
+        didSet {
+            layer.borderWidth = operationState ? 1.0 : 0.0
+            layer.borderColor = operationState ? UIColor.red.cgColor : UIColor.clear.cgColor
+        }
+    }
+
     var shape : XShapes = .none
     var shapeLayer : CAShapeLayer?
 
@@ -169,6 +176,7 @@ class XImageEditView: XBaseView {
     }
     
     override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+        guard operationState else {return nil}
         return imageView
     }
     // MARK: - Gesture Recognizers
