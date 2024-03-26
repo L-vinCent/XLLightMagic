@@ -1,0 +1,42 @@
+{
+    "name": "模板",
+    "version": "1.0",
+    "image_count": 3,
+    "ratio_w": 3,
+    "ratio_h": 4,
+    "thumbnail": "thumbnail.png",
+    "layer": {
+        "type": 1,
+        "rect": {
+            "l": 0,
+            "t": 0,
+            "w": -1,
+            "h": -1
+        },
+        "layer_list": [{
+            "type": 0,
+            "rect": {
+                "l": 0,
+                "t": 0,
+                "w": 0.5,
+                "h": 1.0
+            }
+        }, {
+            "type": 0,
+            "rect": {
+                "l": 0.5,
+                "t": 0,
+                "w": 0.5,
+                "h": 0.5
+            }
+        }, {
+            "type": 0,
+            "rect": {
+                "l": 0.5,
+                "t": 0.5,
+                "w": 0.5,
+                "h": 0.5
+            }
+        }]
+    }
+}
