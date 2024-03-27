@@ -12,6 +12,15 @@ class XPuzzleViewController:XBaseViewController{
     
 
 //    public var puzzleImages:[UIImage]?
+    lazy var yellowButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("Yellow Button", for: .normal)
+        button.backgroundColor = .yellow
+        button.addTarget(self, action: #selector(yellowButtonTapped), for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+
     
     public var editInfo:XEditInfo
     
@@ -69,6 +78,7 @@ class XPuzzleViewController:XBaseViewController{
         view.addSubview(self.contentView)
         view.addSubview(self.boardListView)
         contentView.addSubview(self.editView)
+        view.addSubview(yellowButton)
         
         contentView.snp.makeConstraints {
             $0.edges.equalTo(self.view.xsnp.edges).priority(.low)
@@ -87,9 +97,23 @@ class XPuzzleViewController:XBaseViewController{
             $0.height.equalTo(contentView.snp.width).multipliedBy(proportion.toRadio()) // 设置 editView 的宽度为父视图高度的3/4
         }
         
+        yellowButton.snp.makeConstraints { make in
+            make.size.equalTo(CGSize(width: 80, height: 35))
+            make.top.equalToSuperview()
+            make.right.equalToSuperview()
+        }
+        
     }
     
+    // 点击事件处理方法
+      @objc func yellowButtonTapped() {
+          print("Yellow Button Tapped!")
+          if let view = self.editView.snapshotImage(){
+              photoSave(image: view)
+          }
+      }
     
+
 }
 
 //frame处理
@@ -114,10 +138,35 @@ extension XPuzzleViewController{
     }
 
 }
-extension XPuzzleViewController:XImageEditViewDelegate{
+extension XPuzzleViewController{
     
-    func tapWithEditView(_ sender: XTestImageEditView) {
-        
+//    func pickImages(callback: ( ([UIImage], [PHAsset], Bool) -> Void )?) {
+//        let ps = ZLPhotoPreviewSheet()
+//        ps.selectImageBlock = callback
+//        ps.showPreview(animate: true, sender: self)
+//    }
+    
+    
+    /// 保存图片到相册
+    /// - Parameter image: 需要保存的图片
+    func photoSave(image:UIImage) {
+        UIImageWriteToSavedPhotosAlbum(image, self, #selector(imageSaved(_:didFinishSavingWithError:contextInfo:)), nil)
+    }
+    
+    @objc private func imageSaved(_ image: UIImage, didFinishSavingWithError error: NSError?, contextInfo: UnsafeRawPointer) {
+        if let error = error {
+            // 图片保存失败
+//            view.showToast("保存图片到相册失败: \(error.localizedDescription)")
+            xLog("保存图片到相册失败\(error.localizedDescription)")
+            XHUD.showText("保存图片到相册失败")
+        } else {
+            // 图片保存成功
+            xLog("图片保存成功")
+//            view.showToast("图片保存成功")
+//            XHUD.showSuccess("图片保存成功")
+            XHUD.showText("保存图片到相册失败")
+
+        }
     }
     
 }

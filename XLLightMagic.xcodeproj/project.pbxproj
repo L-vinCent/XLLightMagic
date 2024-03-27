@@ -27,10 +27,11 @@
 		840EC82D2BAAD7670049B06A /* TestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840EC82C2BAAD7670049B06A /* TestVC.swift */; };
 		841CE1192BB276AD0031A93A /* XProportionEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841CE1182BB276AD0031A93A /* XProportionEnum.swift */; };
 		841CE11B2BB3C14D0031A93A /* XEditContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841CE11A2BB3C14D0031A93A /* XEditContainerView.swift */; };
-		841CE11D2BB3CB400031A93A /* DraggableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841CE11C2BB3CB400031A93A /* DraggableView.swift */; };
+		841CE11F2BB41B2D0031A93A /* UIScrollViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841CE11E2BB41B2D0031A93A /* UIScrollViewExtensions.swift */; };
+		841CE1212BB421BE0031A93A /* XHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841CE1202BB421BE0031A93A /* XHUD.swift */; };
+		841CE1242BB43A2D0031A93A /* XSuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841CE1232BB43A2C0031A93A /* XSuccessView.swift */; };
 		849144CD2BAFD7FA00444DD1 /* XBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849144CC2BAFD7FA00444DD1 /* XBaseView.swift */; };
 		849144CF2BAFDA4300444DD1 /* XBaseEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849144CE2BAFDA4300444DD1 /* XBaseEditView.swift */; };
-		849144D12BAFDCC500444DD1 /* UIViewFrameExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849144D02BAFDCC500444DD1 /* UIViewFrameExtension.swift */; };
 		849144D32BAFDEBC00444DD1 /* XNormalLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849144D22BAFDEBC00444DD1 /* XNormalLayoutView.swift */; };
 		849144D62BAFF1F900444DD1 /* CommonEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849144D52BAFF1F900444DD1 /* CommonEnum.swift */; };
 		849144D82BAFF7D200444DD1 /* XEditInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849144D72BAFF7D200444DD1 /* XEditInfo.swift */; };
@@ -147,10 +148,11 @@
 		840EC82C2BAAD7670049B06A /* TestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestVC.swift; sourceTree = "<group>"; };
 		841CE1182BB276AD0031A93A /* XProportionEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XProportionEnum.swift; sourceTree = "<group>"; };
 		841CE11A2BB3C14D0031A93A /* XEditContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XEditContainerView.swift; sourceTree = "<group>"; };
-		841CE11C2BB3CB400031A93A /* DraggableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraggableView.swift; sourceTree = "<group>"; };
+		841CE11E2BB41B2D0031A93A /* UIScrollViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIScrollViewExtensions.swift; sourceTree = "<group>"; };
+		841CE1202BB421BE0031A93A /* XHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XHUD.swift; sourceTree = "<group>"; };
+		841CE1232BB43A2C0031A93A /* XSuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XSuccessView.swift; sourceTree = "<group>"; };
 		849144CC2BAFD7FA00444DD1 /* XBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XBaseView.swift; sourceTree = "<group>"; };
 		849144CE2BAFDA4300444DD1 /* XBaseEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XBaseEditView.swift; sourceTree = "<group>"; };
-		849144D02BAFDCC500444DD1 /* UIViewFrameExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewFrameExtension.swift; sourceTree = "<group>"; };
 		849144D22BAFDEBC00444DD1 /* XNormalLayoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XNormalLayoutView.swift; sourceTree = "<group>"; };
 		849144D52BAFF1F900444DD1 /* CommonEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonEnum.swift; sourceTree = "<group>"; };
 		849144D72BAFF7D200444DD1 /* XEditInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XEditInfo.swift; sourceTree = "<group>"; };
@@ -313,6 +315,7 @@
 		840EC80B2BAAC73C0049B06A /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				841CE1222BB43A140031A93A /* XHUD */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -329,7 +332,7 @@
 				840EC8162BAACC970049B06A /* UIDeviceExtension.swift */,
 				840EC81C2BAACC980049B06A /* UIImageExtensions.swift */,
 				840EC8182BAACC980049B06A /* UIViewExtension.swift */,
-				849144D02BAFDCC500444DD1 /* UIViewFrameExtension.swift */,
+				841CE11E2BB41B2D0031A93A /* UIScrollViewExtensions.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -372,6 +375,15 @@
 				84BDCFE72BB179F100F43383 /* XTemplateTools.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		841CE1222BB43A140031A93A /* XHUD */ = {
+			isa = PBXGroup;
+			children = (
+				841CE1202BB421BE0031A93A /* XHUD.swift */,
+				841CE1232BB43A2C0031A93A /* XSuccessView.swift */,
+			);
+			path = XHUD;
 			sourceTree = "<group>";
 		};
 		849144D42BAFF1BE00444DD1 /* Common */ = {
@@ -521,7 +533,6 @@
 				84BDCFDF2BB11E9200F43383 /* XBoardLayoutCell.swift */,
 				84BDCFE12BB11FEC00F43383 /* XBoardListView.swift */,
 				841CE11A2BB3C14D0031A93A /* XEditContainerView.swift */,
-				841CE11C2BB3CB400031A93A /* DraggableView.swift */,
 			);
 			path = VIew;
 			sourceTree = "<group>";
@@ -794,10 +805,10 @@
 				84CB9EA42BAC5C9300E29794 /* XImageEditView.swift in Sources */,
 				840EC8202BAACC980049B06A /* UIColorExtension.swift in Sources */,
 				84CB9E902BAADF5F00E29794 /* XModel.swift in Sources */,
+				841CE1242BB43A2D0031A93A /* XSuccessView.swift in Sources */,
 				840EC81F2BAACC980049B06A /* UIDeviceExtension.swift in Sources */,
-				841CE11D2BB3CB400031A93A /* DraggableView.swift in Sources */,
+				841CE1212BB421BE0031A93A /* XHUD.swift in Sources */,
 				84BDCFE62BB1704000F43383 /* XTemplateModel.swift in Sources */,
-				849144D12BAFDCC500444DD1 /* UIViewFrameExtension.swift in Sources */,
 				849144CF2BAFDA4300444DD1 /* XBaseEditView.swift in Sources */,
 				849144D82BAFF7D200444DD1 /* XEditInfo.swift in Sources */,
 				84BDCFE22BB11FEC00F43383 /* XBoardListView.swift in Sources */,
@@ -808,6 +819,7 @@
 				849144D32BAFDEBC00444DD1 /* XNormalLayoutView.swift in Sources */,
 				841CE11B2BB3C14D0031A93A /* XEditContainerView.swift in Sources */,
 				849144D62BAFF1F900444DD1 /* CommonEnum.swift in Sources */,
+				841CE11F2BB41B2D0031A93A /* UIScrollViewExtensions.swift in Sources */,
 				84CB9E922BAAE30900E29794 /* XAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -959,6 +971,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -992,6 +1005,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

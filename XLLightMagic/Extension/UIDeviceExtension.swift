@@ -133,3 +133,33 @@ public extension UIDevice{
        }
 }
 
+public extension UIDevice{
+//    func getWindow() -> UIWindow? {
+//        if #available(iOS 13.0, *) {
+//            if let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+//               let window = scene.windows.first {
+//                return window
+//            }
+//        } else {
+//            if let window = UIApplication.shared.windows.first {
+//                return window
+//            }
+//        }
+//        return nil
+//    }
+    
+   static func keyWindow() -> UIWindow?{
+        if #available(iOS 13, *) {
+             return UIApplication.shared.connectedScenes
+                .compactMap { $0 as? UIWindowScene }
+                .flatMap { $0.windows }
+                .first(where: { $0.isKeyWindow })
+            
+        } else {
+            return  UIApplication.shared.keyWindow
+        }
+    }
+   
+    
+    
+}

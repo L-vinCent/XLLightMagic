@@ -86,6 +86,7 @@ extension TestVC: UITableViewDelegate, UITableViewDataSource {
 //            let puzzleVC = XPuzzleViewController()
 //            navigationController?.pushViewController(puzzleVC, animated: false)
 //        }
+        
         if(indexPath.row==1){
             let config = ZLPhotoConfiguration.default()
             config.allowMixSelect = false

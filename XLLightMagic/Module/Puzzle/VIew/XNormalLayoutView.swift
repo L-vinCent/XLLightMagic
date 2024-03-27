@@ -10,12 +10,13 @@ import HandyJSON
 //import SnapKit
 
 
-class XNormalLayoutView: XBaseEditView {
+class XNormalLayoutView: XBaseView {
     private var xImageEditViews: [XImageEditView] = []
     private var lastLocation: CGPoint = .zero
 //    private var editMode: EditMode = .fullImageEditing
     var editImageModeDidChange: ((XEditImageMode) -> Void)?
-
+    
+    
     var template:XTemplateModel?{
         didSet{
             guard let template = template else {return}
@@ -25,7 +26,7 @@ class XNormalLayoutView: XBaseEditView {
         }
     }
     
-    override var images: [UIImage]? {
+     var images: [UIImage]? {
         didSet {
             print("image did set")
 //            guard let images = images else { return}
@@ -57,7 +58,16 @@ class XNormalLayoutView: XBaseEditView {
         addGestureRecognizer(pinchGesture)
         addGestureRecognizer(panGesture)
         addGestureRecognizer(tapGesture)
+        
+     
     }
+    
+    convenience init(images:[UIImage]?) {
+        self.init()
+        self.images = images
+//        configUI()
+    }
+    
     
     // MARK: - Gesture Recognizers
 
@@ -127,7 +137,7 @@ class XNormalLayoutView: XBaseEditView {
         
     }
 
-
+    
     //设置布局样式
     func resetViewByStyle(template:XTemplateModel?){
         
@@ -163,71 +173,13 @@ extension XNormalLayoutView{
 //        throw MoyaError.jsonMapping(self)
 //    }
     //功能方法封装
-  
-    
     
 }
 //frame处理
 extension XNormalLayoutView{
-    func rectWithArray(_ array: [String], andSuperSize superSize: CGSize) -> CGRect {
-        var rect = CGRect.zero
-        var minX = CGFloat.greatestFiniteMagnitude
-        var maxX: CGFloat = 0
-        var minY = CGFloat.greatestFiniteMagnitude
-        var maxY: CGFloat = 0
-        
-        for pointString in array {
-            let point = NSCoder.cgPoint(for: pointString)
-            if point.x <= minX {
-                minX = point.x
-            }
-            
-            if point.x >= maxX {
-                maxX = point.x
-            }
-            
-            if point.y <= minY {
-                minY = point.y
-            }
-            
-            if point.y >= maxY {
-                maxY = point.y
-            }
-            
-            rect = CGRect(x: minX, y: minY, width: maxX - minX, height: maxY - minY)
-        }
-        
-        rect = rectScaleWithRect(rect, scale: 2.0)
-        rect.origin.x = rect.origin.x * frame.size.width / superSize.width
-        rect.origin.y = rect.origin.y * frame.size.height / superSize.height
-        rect.size.width = rect.size.width * frame.size.width / superSize.width
-        rect.size.height = rect.size.height * frame.size.height / superSize.height
-        
-        return rect
-    }
-
-    func rectScaleWithRect(_ rect: CGRect, scale: CGFloat) -> CGRect {
-        var retRect = CGRect.zero
-        
-        let newScale = max(scale, 1.0)
-        retRect.origin.x = rect.origin.x / newScale
-        retRect.origin.y = rect.origin.y / newScale
-        retRect.size.width = rect.size.width / newScale
-        retRect.size.height = rect.size.height / newScale
-        
-        return retRect
-    }
-
-    func pointScaleWithPoint(_ point: CGPoint, scale: CGFloat) -> CGPoint {
-        let newScale = max(scale, 1.0)
-        return CGPoint(x: point.x / newScale, y: point.y / newScale)
-    }
-
-    func sizeScaleWithSize(_ size: CGSize, scale: CGFloat) -> CGSize {
-        let newScale = max(scale, 1.0)
-        return CGSize(width: size.width / newScale, height: size.height / newScale)
-    }
+   
 }
+
 
 
 extension XNormalLayoutView:UIGestureRecognizerDelegate {

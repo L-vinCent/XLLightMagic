@@ -95,34 +95,18 @@ class XBaseEditView: UIView {
     
     func configUI() {
         
-        addSubview(frameImageView)
-        addSubview(backgroundImageView)
-        addSubview(contentView)
-        frameImageView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
-        }
-        backgroundImageView.snp.makeConstraints { make in
-            make.edges.equalToSuperview().inset(UIEdgeInsets(top: padding, left: padding, bottom: padding, right: padding))
-        }
-        contentView.snp.makeConstraints { make in
+//        addSubview(frameImageView)
+//        addSubview(backgroundImageView)
+//        addSubview(contentView)
+//        frameImageView.snp.makeConstraints { make in
+//            make.edges.equalToSuperview()
+//        }
+//        backgroundImageView.snp.makeConstraints { make in
 //            make.edges.equalToSuperview().inset(UIEdgeInsets(top: padding, left: padding, bottom: padding, right: padding))
-            make.edges.equalTo(backgroundImageView)
-        }
+//        }
+//        contentView.snp.makeConstraints { make in
+//            make.edges.equalTo(backgroundImageView)
+//        }
     }
-    
-    func getImageFromView() -> UIImage {
-        // 下面方法，第一个参数表示区域大小。第二个参数表示是否是非透明的。如果需要显示半透明效果，需要传NO，否则传YES。第三个参数就是屏幕密度了
-        UIGraphicsBeginImageContextWithOptions(size, false, UIScreen.main.scale)
-        let context = UIGraphicsGetCurrentContext()
-        layer.render(in: context!)
-        let image = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        return image!
-    }
-    
-    func thumbnail() -> UIImage {
-        frame = CGRect(x: 0, y: 0, width: 100, height: 100)
-        layoutIfNeeded()
-        return getImageFromView()
-    }
+
 }
