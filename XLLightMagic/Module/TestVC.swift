@@ -87,7 +87,11 @@ extension TestVC: UITableViewDelegate, UITableViewDataSource {
 //            navigationController?.pushViewController(puzzleVC, animated: false)
 //        }
         if(indexPath.row==1){
-            
+            let config = ZLPhotoConfiguration.default()
+            config.allowMixSelect = false
+            config.allowEditVideo = false
+            config.allowSelectVideo = false
+
             let ps = ZLPhotoPreviewSheet()
             ps.selectImageBlock = {[weak self] results,isOriginal in
                 guard let self = self else {return}

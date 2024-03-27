@@ -9,15 +9,12 @@ import UIKit
 import HandyJSON
 //import SnapKit
 
-enum EditMode {
-    case fullImageEditing //整图缩放
-    case singleImageEditing //小图缩放
-}
 
 class XNormalLayoutView: XBaseEditView {
     private var xImageEditViews: [XImageEditView] = []
     private var lastLocation: CGPoint = .zero
-    private var editMode: EditMode = .fullImageEditing
+//    private var editMode: EditMode = .fullImageEditing
+    var editImageModeDidChange: ((XEditImageMode) -> Void)?
 
     var template:XTemplateModel?{
         didSet{
@@ -31,7 +28,7 @@ class XNormalLayoutView: XBaseEditView {
     override var images: [UIImage]? {
         didSet {
             print("image did set")
-            guard let images = images else { return}
+//            guard let images = images else { return}
         }
     }
     
@@ -77,9 +74,11 @@ class XNormalLayoutView: XBaseEditView {
         guard let view = gesture.view else { return }
         
         if gesture.state == .began {
+            
             lastLocation = view.center
+            xLog("self\(self)location\(lastLocation)")
         } else if gesture.state == .changed {
-            let translation = gesture.translation(in: self)
+            let translation = gesture.translation(in: superview)
             view.center = CGPoint(x: lastLocation.x + translation.x, y: lastLocation.y + translation.y)
         }
     }
@@ -99,9 +98,11 @@ class XNormalLayoutView: XBaseEditView {
                 // 点击范围内的 xImageEditView，将其 operationState 设置为 true
                 if(xImageEditView.operationState){
                     xImageEditView.operationState = false
+                    editImageModeDidChange?(.fullImageEditing)
                 }else{
                     xImageEditView.operationState = true
                     anyViewSelected = true
+                    editImageModeDidChange?(.singleImageEditing)
                 }
             } else {
                 // 不在点击范围内的 xImageEditView，将其 operationState 设置为 false
@@ -126,29 +127,8 @@ class XNormalLayoutView: XBaseEditView {
         
     }
 
-//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        guard let touch = touches.first else { return }
-//        if(touch.tapCount == 1){
-//            xLog("单指点击了")
-//        }
-//        let touchPoint = touch.location(in: self)
-//        
-//        for xImageEditView in xImageEditViews {
-//            let convertedPoint = xImageEditView.convert(touchPoint, from: self)
-//            if xImageEditView.bounds.contains(convertedPoint) {
-//                // 点击范围内的 xImageEditView，将其 operationState 设置为 true
-//                xImageEditView.operationState = true
-//            } else {
-//                // 不在点击范围内的 xImageEditView，将其 operationState 设置为 false
-//                xImageEditView.operationState = false
-//            }
-//        }
-//        
-//       let v = hitTest(touchPoint, with: event)
-//        
-//    }
 
-    
+    //设置布局样式
     func resetViewByStyle(template:XTemplateModel?){
         
         guard let _ = template else { return }

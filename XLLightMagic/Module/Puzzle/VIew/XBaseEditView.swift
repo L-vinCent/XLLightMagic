@@ -69,6 +69,8 @@ class XBaseEditView: UIView {
         return view
     }()
     
+    
+    
     var padding : CGFloat = 4 {
         didSet {
             contentView.snp.remakeConstraints { make in

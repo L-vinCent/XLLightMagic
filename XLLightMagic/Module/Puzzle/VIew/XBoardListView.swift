@@ -13,7 +13,6 @@ class XBoardListView:XBaseCollectionViewCell{
             self.collectionView.reloadData()
         }
     }
-       
     var cellSize: CGSize = CGSize(width: 38, height: 45)
     var interItemSpacing: CGFloat = 25
     

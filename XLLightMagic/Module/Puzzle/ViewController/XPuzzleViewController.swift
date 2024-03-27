@@ -15,14 +15,17 @@ class XPuzzleViewController:XBaseViewController{
     
     public var editInfo:XEditInfo
     
-    private lazy var contentView: UIView = {
-        let view = UIView()
+    private lazy var contentView: XEditContainerView = {
+        let view = XEditContainerView(editView: self.editView,editInfo: self.editInfo)
         view.backgroundColor = .gray
         return view
     }()
 
     private lazy var editView: XNormalLayoutView = {
         let view = XNormalLayoutView(images: editInfo.images)
+        view.editImageModeDidChange = {[weak self] mode in
+            self?.editInfo.editMode = mode
+        }
         return view
     }()
     
@@ -39,10 +42,9 @@ class XPuzzleViewController:XBaseViewController{
         view.imageArray = imageNameArray
         return view
     }()
-    
+   
     override func viewDidLoad() {
         super.viewDidLoad()
-        // 初始化 XImageEditView
         
         let styleName = "number_three_style_3"
         guard let tempate = XTemplateTools.loadJSONAsTemplate(jsonName: styleName) else {return}
@@ -58,7 +60,9 @@ class XPuzzleViewController:XBaseViewController{
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-                        
+                
+    
+    
     
     override func configUI() {
         

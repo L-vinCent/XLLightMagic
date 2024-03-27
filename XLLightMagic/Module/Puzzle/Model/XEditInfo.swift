@@ -14,6 +14,8 @@ class XEditInfo{
     var filterImages: [UIImage] = []
     //比例大小
     var proportion: XProportion = .oneToOne
+    //当前编辑模式，操作用
+    var editMode:XEditImageMode = .fullImageEditing
     
     init(images: [UIImage]) {
         self.images = images
