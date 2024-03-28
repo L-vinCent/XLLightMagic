@@ -30,6 +30,8 @@
 		841CE11F2BB41B2D0031A93A /* UIScrollViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841CE11E2BB41B2D0031A93A /* UIScrollViewExtensions.swift */; };
 		841CE1212BB421BE0031A93A /* XHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841CE1202BB421BE0031A93A /* XHUD.swift */; };
 		841CE1242BB43A2D0031A93A /* XSuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841CE1232BB43A2C0031A93A /* XSuccessView.swift */; };
+		841CE1262BB50A550031A93A /* 11.html in Resources */ = {isa = PBXBuildFile; fileRef = 841CE1252BB50A550031A93A /* 11.html */; };
+		841CE1292BB50D7E0031A93A /* XIDPhotoWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841CE1282BB50D7E0031A93A /* XIDPhotoWebViewController.swift */; };
 		849144CD2BAFD7FA00444DD1 /* XBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849144CC2BAFD7FA00444DD1 /* XBaseView.swift */; };
 		849144CF2BAFDA4300444DD1 /* XBaseEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849144CE2BAFDA4300444DD1 /* XBaseEditView.swift */; };
 		849144D32BAFDEBC00444DD1 /* XNormalLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849144D22BAFDEBC00444DD1 /* XNormalLayoutView.swift */; };
@@ -151,6 +153,8 @@
 		841CE11E2BB41B2D0031A93A /* UIScrollViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIScrollViewExtensions.swift; sourceTree = "<group>"; };
 		841CE1202BB421BE0031A93A /* XHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XHUD.swift; sourceTree = "<group>"; };
 		841CE1232BB43A2C0031A93A /* XSuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XSuccessView.swift; sourceTree = "<group>"; };
+		841CE1252BB50A550031A93A /* 11.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = 11.html; sourceTree = "<group>"; };
+		841CE1282BB50D7E0031A93A /* XIDPhotoWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XIDPhotoWebViewController.swift; sourceTree = "<group>"; };
 		849144CC2BAFD7FA00444DD1 /* XBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XBaseView.swift; sourceTree = "<group>"; };
 		849144CE2BAFDA4300444DD1 /* XBaseEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XBaseEditView.swift; sourceTree = "<group>"; };
 		849144D22BAFDEBC00444DD1 /* XNormalLayoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XNormalLayoutView.swift; sourceTree = "<group>"; };
@@ -348,6 +352,7 @@
 		840EC80E2BAAC7610049B06A /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				841CE1272BB50A7D0031A93A /* WebIDPhoto */,
 				84CB9E9D2BAC20D300E29794 /* XTestImageEditView.swift */,
 				840EC82C2BAAD7670049B06A /* TestVC.swift */,
 				840EC7F62BAAC6810049B06A /* AppDelegate.swift */,
@@ -386,6 +391,14 @@
 			path = XHUD;
 			sourceTree = "<group>";
 		};
+		841CE1272BB50A7D0031A93A /* WebIDPhoto */ = {
+			isa = PBXGroup;
+			children = (
+				841CE1282BB50D7E0031A93A /* XIDPhotoWebViewController.swift */,
+			);
+			path = WebIDPhoto;
+			sourceTree = "<group>";
+		};
 		849144D42BAFF1BE00444DD1 /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -399,6 +412,7 @@
 		84BDCF442BB116D200F43383 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				841CE1252BB50A550031A93A /* 11.html */,
 				84BDCFE32BB16EF200F43383 /* number_three_style_3.json */,
 				84BDCFAA2BB118C000F43383 /* storyboard */,
 				84BDCF5D2BB116F500F43383 /* Plists */,
@@ -676,6 +690,7 @@
 				84BDCF732BB116F500F43383 /* number_two_style_4.plist in Resources */,
 				840EC8032BAAC6840049B06A /* LaunchScreen.storyboard in Resources */,
 				84BDCFAB2BB118C000F43383 /* makecards_puzzle5_storyboard1_icon.png in Resources */,
+				841CE1262BB50A550031A93A /* 11.html in Resources */,
 				84BDCFD92BB118C000F43383 /* makecards_puzzle_storyboard6_icon.png in Resources */,
 				84BDCF752BB116F500F43383 /* number_two_style_6.plist in Resources */,
 				84BDCFC52BB118C000F43383 /* makecards_puzzle3_storyboard2_icon.png in Resources */,
@@ -784,6 +799,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				841CE1292BB50D7E0031A93A /* XIDPhotoWebViewController.swift in Sources */,
 				840EC8222BAACC980049B06A /* UIBarButtonItemExtension.swift in Sources */,
 				84BDCFE02BB11E9200F43383 /* XBoardLayoutCell.swift in Sources */,
 				840EC8292BAAD0620049B06A /* XNavigationController.swift in Sources */,

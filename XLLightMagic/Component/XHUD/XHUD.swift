@@ -20,15 +20,29 @@ enum XHUDLoadingProgressStyle: Int {
 class XHUD: MBProgressHUD {
     
     
-    
+    /**
+     只显示纯文本信息, 默认 1 秒后消失
+     */
     class func showText(_ text: String, view: UIView? = nil) {
         showPlainText(text, hideAfterDelay: 1.0, view: view)
     }
-    
+    /**
+     只显示纯文本信息, 默认 1 秒后消失
+
+     @param text 消息文本
+     @param view 展示的View
+     */
     class func showPlainText(_ text: String, view: UIView? = nil) {
         showPlainText(text, hideAfterDelay: 1.0, view: view)
     }
     
+    /**
+     只显示纯文本信息
+
+     @param text 消息文本
+     @param time HUD展示时长
+     @param view 展示的View
+     */
     class func showPlainText(_ text: String, hideAfterDelay time: TimeInterval, view: UIView? = nil) {
         guard let window = UIDevice.keyWindow() else {return}
         let hudView = view ?? window

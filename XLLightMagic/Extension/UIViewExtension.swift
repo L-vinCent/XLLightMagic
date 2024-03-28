@@ -175,6 +175,16 @@ extension UIView {
             
             return image
         }
+    
+    func convertViewToImage() -> UIImage? {
+        let s = self.bounds.size
+        UIGraphicsBeginImageContextWithOptions(s, false, 10.0)
+        self.layer.render(in: UIGraphicsGetCurrentContext()!)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return image
+    }
+    
 }
 
 extension UIView {

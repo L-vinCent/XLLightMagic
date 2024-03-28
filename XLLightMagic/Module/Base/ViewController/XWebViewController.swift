@@ -8,10 +8,29 @@
 import UIKit
 import WebKit
 
+protocol XWebViewDelegate: AnyObject {
+    
+    // MARK: - WKNavigationDelegate
+    
+//    func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!)
+//    
+//    func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!)
+    
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!)
+    
+//    func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error)
+    
+    // MARK: - WKUIDelegate
+    
+//    func webView(_ webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration, for navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView?
+//    
+//    func webViewDidClose(_ webView: WKWebView)
+}
+
 class XWebViewController: XBaseViewController, WKNavigationDelegate, WKUIDelegate {
     
     var request: URLRequest!
-    
+    var delegate:XWebViewDelegate?
     lazy var webView: WKWebView = {
         let ww = WKWebView()
         ww.allowsBackForwardNavigationGestures = true
@@ -30,13 +49,15 @@ class XWebViewController: XBaseViewController, WKNavigationDelegate, WKUIDelegat
     convenience init(url: String?) {
         self.init()
         self.request = URLRequest(url: URL(string: url ?? "")!)
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+       
+        return
         
         webView.addObserver(self, forKeyPath: "estimatedProgress", options: .new, context: nil)
-        
         webView.load(request)
     }
     
@@ -91,6 +112,7 @@ extension XWebViewController {
         
         progressView.setProgress(0.0, animated: false)
         navigationItem.title = title ?? (webView.title ?? webView.url?.host)
+        delegate?.webView(webView, didFinish: navigation)
     }
 }
 

@@ -11,7 +11,7 @@ class TestVC:XBaseViewController {
     
     private lazy var xArray:Array = {
         return [
-            ["title":"拼图测试"],
+            ["title":"网页证件照"],
             ["title":"选择照片"],
         ]
     }()
@@ -82,10 +82,10 @@ extension TestVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-//        if(indexPath.row==0){
-//            let puzzleVC = XPuzzleViewController()
-//            navigationController?.pushViewController(puzzleVC, animated: false)
-//        }
+        if(indexPath.row==0){
+            let web = XIDPhotoWebViewController(url: "ttt")
+            navigationController?.pushViewController(web, animated: false)
+        }
         
         if(indexPath.row==1){
             let config = ZLPhotoConfiguration.default()

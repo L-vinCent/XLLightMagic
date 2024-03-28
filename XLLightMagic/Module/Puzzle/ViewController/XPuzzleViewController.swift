@@ -111,6 +111,10 @@ class XPuzzleViewController:XBaseViewController{
           if let view = self.editView.snapshotImage(){
               photoSave(image: view)
           }
+          if let view = self.editView.convertViewToImage(){
+              photoSave(image: view)
+          }
+          
       }
     
 
@@ -164,7 +168,7 @@ extension XPuzzleViewController{
             xLog("图片保存成功")
 //            view.showToast("图片保存成功")
 //            XHUD.showSuccess("图片保存成功")
-            XHUD.showText("保存图片到相册失败")
+            XHUD.showText("保存图片到相册成功")
 
         }
     }
