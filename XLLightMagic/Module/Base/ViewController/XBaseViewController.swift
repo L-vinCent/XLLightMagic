@@ -16,7 +16,7 @@ class XBaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = UIColor.background
+        view.backgroundColor = UIColor.themeBackground
         if #available(iOS 11.0, *) {
             UIScrollView.appearance().contentInsetAdjustmentBehavior = .never
         } else {
@@ -35,10 +35,11 @@ class XBaseViewController: UIViewController {
     
     func configNavigationBar() {
         guard let navi = navigationController else { return }
+        
         if navi.visibleViewController == self {
-            navi.barStyle(.theme)
+            navi.barStyle(.clear)
             navi.disablePopGesture = true
-            navi.setNavigationBarHidden(false, animated: true)
+            navi.setNavigationBarHidden(true, animated: true)
             if navi.viewControllers.count > 1 {
                 navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "nav_back_white"),
                                                                    target: self,

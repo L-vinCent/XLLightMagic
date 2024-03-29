@@ -21,6 +21,15 @@ class XPuzzleViewController:XBaseViewController{
         return button
     }()
 
+    lazy var filterButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("filter", for: .normal)
+        button.backgroundColor = .yellow
+        button.addTarget(self, action: #selector(filterButtonTapped), for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+
     
     public var editInfo:XEditInfo
     
@@ -51,6 +60,11 @@ class XPuzzleViewController:XBaseViewController{
         view.imageArray = imageNameArray
         return view
     }()
+    
+    private lazy var filterListView:XFilterListView = {
+        let view = XFilterListView()
+        return view
+    }()
    
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,8 +92,9 @@ class XPuzzleViewController:XBaseViewController{
         view.addSubview(self.contentView)
         view.addSubview(self.boardListView)
         contentView.addSubview(self.editView)
-        view.addSubview(yellowButton)
-        
+        view.addSubview(self.yellowButton)
+        view.addSubview(self.filterButton)
+        view.addSubview(self.filterListView)
         contentView.snp.makeConstraints {
             $0.edges.equalTo(self.view.xsnp.edges).priority(.low)
             $0.top.equalToSuperview()
@@ -97,11 +112,24 @@ class XPuzzleViewController:XBaseViewController{
             $0.height.equalTo(contentView.snp.width).multipliedBy(proportion.toRadio()) // 设置 editView 的宽度为父视图高度的3/4
         }
         
+        filterListView.snp.makeConstraints { make in
+            make.width.equalToSuperview()
+            make.height.equalTo(80)
+            make.bottom.equalToSuperview()
+            make.left.equalToSuperview()
+        }
         yellowButton.snp.makeConstraints { make in
             make.size.equalTo(CGSize(width: 80, height: 35))
             make.top.equalToSuperview()
             make.right.equalToSuperview()
         }
+        
+        filterButton.snp.makeConstraints { make in
+            make.size.equalTo(CGSize(width: 80, height: 35))
+            make.top.equalToSuperview()
+            make.right.equalToSuperview().offset(-100)
+        }
+
         
     }
     
@@ -111,12 +139,13 @@ class XPuzzleViewController:XBaseViewController{
           if let view = self.editView.snapshotImage(){
               photoSave(image: view)
           }
-          if let view = self.editView.convertViewToImage(){
-              photoSave(image: view)
-          }
-          
+         
       }
     
+    @objc func filterButtonTapped() {
+        print("")
+        
+    }
 
 }
 

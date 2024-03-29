@@ -7,7 +7,7 @@
 
 import UIKit
 
-class UNavigationController: UINavigationController {
+class XNavigationController: UINavigationController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +30,7 @@ class UNavigationController: UINavigationController {
     }
 }
 
-extension UNavigationController: UIGestureRecognizerDelegate {
+extension XNavigationController: UIGestureRecognizerDelegate {
     
     func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
         let isLeftToRight = UIApplication.shared.userInterfaceLayoutDirection == .leftToRight
@@ -43,7 +43,7 @@ extension UNavigationController: UIGestureRecognizerDelegate {
     }
 }
 
-extension UNavigationController {
+extension XNavigationController {
     override var preferredStatusBarStyle: UIStatusBarStyle {
         guard let topVC = topViewController else { return .lightContent }
         return topVC.preferredStatusBarStyle

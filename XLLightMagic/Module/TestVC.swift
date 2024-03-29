@@ -18,7 +18,7 @@ class TestVC:XBaseViewController {
     
     lazy var tableView: UITableView = {
         let tw = UITableView(frame: .zero, style: .grouped)
-        tw.backgroundColor = UIColor.background
+        tw.backgroundColor = UIColor.themeBackground
         tw.delegate = self
         tw.dataSource = self
         tw.register(cellType: XBaseTableViewCell.self)

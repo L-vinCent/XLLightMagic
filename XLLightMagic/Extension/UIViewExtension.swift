@@ -160,23 +160,23 @@ extension UIView {
 //        }
 //    }
     
-    func snapshotImage() -> UIImage? {
-            // 获取视图的当前大小
-            let size = bounds.size
-            
-        xLog("layer\(layer.frame.size)bouce\(size)")
-            // 使用 UIGraphicsImageRenderer 创建图像渲染器
-            let renderer = UIGraphicsImageRenderer(size: size)
-            
-            // 渲染视图并返回图像
-            let image = renderer.image { ctx in
-                layer.render(in: ctx.cgContext)
-            }
-            
-            return image
-        }
+//    func snapshotImage() -> UIImage? {
+//            // 获取视图的当前大小
+//            let size = bounds.size
+//            
+//        xLog("layer\(layer.frame.size)bouce\(size)")
+//            // 使用 UIGraphicsImageRenderer 创建图像渲染器
+//            let renderer = UIGraphicsImageRenderer(size: size)
+//            
+//            // 渲染视图并返回图像
+//            let image = renderer.image { ctx in
+//                layer.render(in: ctx.cgContext)
+//            }
+//            
+//            return image
+//        }
     
-    func convertViewToImage() -> UIImage? {
+    func snapshotImage() -> UIImage? {
         let s = self.bounds.size
         UIGraphicsBeginImageContextWithOptions(s, false, 10.0)
         self.layer.render(in: UIGraphicsGetCurrentContext()!)

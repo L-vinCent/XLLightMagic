@@ -11,13 +11,18 @@ import MBProgressHUD
 
 //MARK: loading插件，组合API请求，可在请求中自动补充loading
 let LoadingPlugin = NetworkActivityPlugin { (type, target) in
-    guard let vc = topVC else { return }
+//    guard let vc = topVC else { return }
     switch type {
     case .began:
-        MBProgressHUD.hide(for: vc.view, animated: false)
-        MBProgressHUD.showAdded(to: vc.view, animated: true)
+//        MBProgressHUD.hide(for: vc.view, animated: false)
+//        MBProgressHUD.showAdded(to: vc.view, animated: true)
+        XHUD.x_hideHUD()
+        XHUD.showActivityLoading()
+
     case .ended:
-        MBProgressHUD.hide(for: vc.view, animated: true)
+//        MBProgressHUD.hide(for: vc.view, animated: true)
+        XHUD.x_hideHUD()
+
     }
 }
 //MARK: 超时中间件

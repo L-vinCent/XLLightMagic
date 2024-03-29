@@ -13,12 +13,56 @@ import MJRefresh
 
 //MARK: 应用默认颜色
 extension UIColor {
-    class var background: UIColor {
-        return UIColor(r: 242, g: 242, b: 242)
+    //主题背景黑
+    class var themeBackground: UIColor {
+        return UIColor.hex(hexString:"#1E1E1E")
+    }
+
+    //灰
+    class var fontGray300: UIColor {
+        return UIColor.hex(hexString:"#D4D4D4")
     }
     
-    class var theme: UIColor {
-        return UIColor(r: 29, g: 221, b: 43)
+    class var fontGray600: UIColor {
+        return UIColor.hex(hexString:"#999999")
+    }
+    
+    class var fontGray900: UIColor {
+        return UIColor.hex(hexString:"#666666")
+    }
+    
+    //背景灰
+    class var BGNormalGray01: UIColor {
+        return UIColor.hex(hexString:"#F6F6F6")
+    }
+    
+    
+    class var accentColor: UIColor{
+        return UIColor.hex(hexString:"#FA9E2C")
+    }
+    
+    class var cellColor: UIColor{
+        return UIColor.hex(hexString:"#CDCDCD")
+    }
+    
+    class var normalTextColor: UIColor{
+        return UIColor.hex(hexString:"#FFFFFF")
+    }
+    
+    class var descTextColor: UIColor{
+        return UIColor.hex(hexString:"#999999")
+    }
+    
+    class var selectColor: UIColor{
+        return UIColor.hex(hexString:"#1296db")
+    }
+    
+}
+
+extension UIFont{
+    //常规大小字体
+    class var normalFont:UIFont{
+        return UIFont.systemFont(ofSize: 14)
     }
 }
 
@@ -34,30 +78,6 @@ extension NSNotification.Name {
 let XScreenWidth = UIScreen.main.bounds.width
 let XScreenHeight = UIScreen.main.bounds.height
 
-var topVC: UIViewController? {
-    var resultVC: UIViewController?
-    resultVC = _topVC(UIApplication.shared.keyWindow?.rootViewController)
-    while resultVC?.presentedViewController != nil {
-        resultVC = _topVC(resultVC?.presentedViewController)
-    }
-    return resultVC
-}
-
-var isIphoneX: Bool {
-    return UI_USER_INTERFACE_IDIOM() == .phone
-        && (max(UIScreen.main.bounds.height, UIScreen.main.bounds.width) == 812
-        || max(UIScreen.main.bounds.height, UIScreen.main.bounds.width) == 896)
-}
-
-private  func _topVC(_ vc: UIViewController?) -> UIViewController? {
-    if vc is UINavigationController {
-        return _topVC((vc as? UINavigationController)?.topViewController)
-    } else if vc is UITabBarController {
-        return _topVC((vc as? UITabBarController)?.selectedViewController)
-    } else {
-        return vc
-    }
-}
 
 
 //MARK: print

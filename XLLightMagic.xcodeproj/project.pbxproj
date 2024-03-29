@@ -32,8 +32,14 @@
 		841CE1242BB43A2D0031A93A /* XSuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841CE1232BB43A2C0031A93A /* XSuccessView.swift */; };
 		841CE1262BB50A550031A93A /* 11.html in Resources */ = {isa = PBXBuildFile; fileRef = 841CE1252BB50A550031A93A /* 11.html */; };
 		841CE1292BB50D7E0031A93A /* XIDPhotoWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841CE1282BB50D7E0031A93A /* XIDPhotoWebViewController.swift */; };
+		841CE12E2BB571300031A93A /* XImageAndTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841CE12D2BB571300031A93A /* XImageAndTextCell.swift */; };
+		841CE1302BB576850031A93A /* XFilterListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841CE12F2BB576850031A93A /* XFilterListView.swift */; };
+		841CE1322BB58B090031A93A /* XFilterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841CE1312BB58B090031A93A /* XFilterManager.swift */; };
+		841CE1392BB5A18A0031A93A /* GPUImage in Frameworks */ = {isa = PBXBuildFile; productRef = 841CE1382BB5A18A0031A93A /* GPUImage */; };
+		841CE13E2BB6A5CF0031A93A /* XHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841CE13D2BB6A5CF0031A93A /* XHomeViewController.swift */; };
+		841CE1412BB6C8BF0031A93A /* XPageLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841CE1402BB6C8BF0031A93A /* XPageLayout.swift */; };
+		841CE1432BB6E2710031A93A /* XPageTitleCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841CE1422BB6E2710031A93A /* XPageTitleCustom.swift */; };
 		849144CD2BAFD7FA00444DD1 /* XBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849144CC2BAFD7FA00444DD1 /* XBaseView.swift */; };
-		849144CF2BAFDA4300444DD1 /* XBaseEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849144CE2BAFDA4300444DD1 /* XBaseEditView.swift */; };
 		849144D32BAFDEBC00444DD1 /* XNormalLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849144D22BAFDEBC00444DD1 /* XNormalLayoutView.swift */; };
 		849144D62BAFF1F900444DD1 /* CommonEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849144D52BAFF1F900444DD1 /* CommonEnum.swift */; };
 		849144D82BAFF7D200444DD1 /* XEditInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849144D72BAFF7D200444DD1 /* XEditInfo.swift */; };
@@ -155,8 +161,13 @@
 		841CE1232BB43A2C0031A93A /* XSuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XSuccessView.swift; sourceTree = "<group>"; };
 		841CE1252BB50A550031A93A /* 11.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = 11.html; sourceTree = "<group>"; };
 		841CE1282BB50D7E0031A93A /* XIDPhotoWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XIDPhotoWebViewController.swift; sourceTree = "<group>"; };
+		841CE12D2BB571300031A93A /* XImageAndTextCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XImageAndTextCell.swift; sourceTree = "<group>"; };
+		841CE12F2BB576850031A93A /* XFilterListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XFilterListView.swift; sourceTree = "<group>"; };
+		841CE1312BB58B090031A93A /* XFilterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XFilterManager.swift; sourceTree = "<group>"; };
+		841CE13D2BB6A5CF0031A93A /* XHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XHomeViewController.swift; sourceTree = "<group>"; };
+		841CE1402BB6C8BF0031A93A /* XPageLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XPageLayout.swift; sourceTree = "<group>"; };
+		841CE1422BB6E2710031A93A /* XPageTitleCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XPageTitleCustom.swift; sourceTree = "<group>"; };
 		849144CC2BAFD7FA00444DD1 /* XBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XBaseView.swift; sourceTree = "<group>"; };
-		849144CE2BAFDA4300444DD1 /* XBaseEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XBaseEditView.swift; sourceTree = "<group>"; };
 		849144D22BAFDEBC00444DD1 /* XNormalLayoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XNormalLayoutView.swift; sourceTree = "<group>"; };
 		849144D52BAFF1F900444DD1 /* CommonEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonEnum.swift; sourceTree = "<group>"; };
 		849144D72BAFF7D200444DD1 /* XEditInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XEditInfo.swift; sourceTree = "<group>"; };
@@ -258,6 +269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D9F9D85364C16695723C00EA /* Pods_XLLightMagic.framework in Frameworks */,
+				841CE1392BB5A18A0031A93A /* GPUImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,6 +331,7 @@
 		840EC80B2BAAC73C0049B06A /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				841CE13F2BB6C8050031A93A /* XPageView */,
 				841CE1222BB43A140031A93A /* XHUD */,
 			);
 			path = Component;
@@ -352,6 +365,7 @@
 		840EC80E2BAAC7610049B06A /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				841CE13C2BB6A5B60031A93A /* Home */,
 				841CE1272BB50A7D0031A93A /* WebIDPhoto */,
 				84CB9E9D2BAC20D300E29794 /* XTestImageEditView.swift */,
 				840EC82C2BAAD7670049B06A /* TestVC.swift */,
@@ -378,6 +392,7 @@
 				849144D72BAFF7D200444DD1 /* XEditInfo.swift */,
 				84BDCFE52BB1704000F43383 /* XTemplateModel.swift */,
 				84BDCFE72BB179F100F43383 /* XTemplateTools.swift */,
+				841CE1312BB58B090031A93A /* XFilterManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -397,6 +412,23 @@
 				841CE1282BB50D7E0031A93A /* XIDPhotoWebViewController.swift */,
 			);
 			path = WebIDPhoto;
+			sourceTree = "<group>";
+		};
+		841CE13C2BB6A5B60031A93A /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				841CE13D2BB6A5CF0031A93A /* XHomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		841CE13F2BB6C8050031A93A /* XPageView */ = {
+			isa = PBXGroup;
+			children = (
+				841CE1402BB6C8BF0031A93A /* XPageLayout.swift */,
+				841CE1422BB6E2710031A93A /* XPageTitleCustom.swift */,
+			);
+			path = XPageView;
 			sourceTree = "<group>";
 		};
 		849144D42BAFF1BE00444DD1 /* Common */ = {
@@ -542,11 +574,12 @@
 			isa = PBXGroup;
 			children = (
 				84CB9EA32BAC5C9300E29794 /* XImageEditView.swift */,
-				849144CE2BAFDA4300444DD1 /* XBaseEditView.swift */,
 				849144D22BAFDEBC00444DD1 /* XNormalLayoutView.swift */,
-				84BDCFDF2BB11E9200F43383 /* XBoardLayoutCell.swift */,
 				84BDCFE12BB11FEC00F43383 /* XBoardListView.swift */,
 				841CE11A2BB3C14D0031A93A /* XEditContainerView.swift */,
+				84BDCFDF2BB11E9200F43383 /* XBoardLayoutCell.swift */,
+				841CE12D2BB571300031A93A /* XImageAndTextCell.swift */,
+				841CE12F2BB576850031A93A /* XFilterListView.swift */,
 			);
 			path = VIew;
 			sourceTree = "<group>";
@@ -626,6 +659,9 @@
 			dependencies = (
 			);
 			name = XLLightMagic;
+			packageProductDependencies = (
+				841CE1382BB5A18A0031A93A /* GPUImage */,
+			);
 			productName = XLLightMagic;
 			productReference = 840EC7F32BAAC6810049B06A /* XLLightMagic.app */;
 			productType = "com.apple.product-type.application";
@@ -654,6 +690,9 @@
 				Base,
 			);
 			mainGroup = 840EC7EA2BAAC6810049B06A;
+			packageReferences = (
+				841CE1372BB5A18A0031A93A /* XCRemoteSwiftPackageReference "GPUImage3" */,
+			);
 			productRefGroup = 840EC7F42BAAC6810049B06A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -804,11 +843,15 @@
 				84BDCFE02BB11E9200F43383 /* XBoardLayoutCell.swift in Sources */,
 				840EC8292BAAD0620049B06A /* XNavigationController.swift in Sources */,
 				840EC8132BAACBC10049B06A /* Global.swift in Sources */,
+				841CE1302BB576850031A93A /* XFilterListView.swift in Sources */,
 				84CB9E9E2BAC20D300E29794 /* XTestImageEditView.swift in Sources */,
 				840EC8232BAACC980049B06A /* DispatchQueueExtension.swift in Sources */,
+				841CE1322BB58B090031A93A /* XFilterManager.swift in Sources */,
 				84BDCFE82BB179F100F43383 /* XTemplateTools.swift in Sources */,
 				840EC8242BAACC980049B06A /* DictionaryExtension.swift in Sources */,
+				841CE1432BB6E2710031A93A /* XPageTitleCustom.swift in Sources */,
 				840EC8272BAACF9D0049B06A /* XTabBarController.swift in Sources */,
+				841CE13E2BB6A5CF0031A93A /* XHomeViewController.swift in Sources */,
 				841CE1192BB276AD0031A93A /* XProportionEnum.swift in Sources */,
 				840EC81D2BAACC980049B06A /* ArrayExtensions.swift in Sources */,
 				849144CD2BAFD7FA00444DD1 /* XBaseView.swift in Sources */,
@@ -822,16 +865,17 @@
 				840EC8202BAACC980049B06A /* UIColorExtension.swift in Sources */,
 				84CB9E902BAADF5F00E29794 /* XModel.swift in Sources */,
 				841CE1242BB43A2D0031A93A /* XSuccessView.swift in Sources */,
+				841CE12E2BB571300031A93A /* XImageAndTextCell.swift in Sources */,
 				840EC81F2BAACC980049B06A /* UIDeviceExtension.swift in Sources */,
 				841CE1212BB421BE0031A93A /* XHUD.swift in Sources */,
 				84BDCFE62BB1704000F43383 /* XTemplateModel.swift in Sources */,
-				849144CF2BAFDA4300444DD1 /* XBaseEditView.swift in Sources */,
 				849144D82BAFF7D200444DD1 /* XEditInfo.swift in Sources */,
 				84BDCFE22BB11FEC00F43383 /* XBoardListView.swift in Sources */,
 				840EC8212BAACC980049B06A /* UIViewExtension.swift in Sources */,
 				840EC7F72BAAC6810049B06A /* AppDelegate.swift in Sources */,
 				84CB9EA02BAC239700E29794 /* XPuzzleViewController.swift in Sources */,
 				840EC8112BAACAF20049B06A /* XBaseViewController.swift in Sources */,
+				841CE1412BB6C8BF0031A93A /* XPageLayout.swift in Sources */,
 				849144D32BAFDEBC00444DD1 /* XNormalLayoutView.swift in Sources */,
 				841CE11B2BB3C14D0031A93A /* XEditContainerView.swift in Sources */,
 				849144D62BAFF1F900444DD1 /* CommonEnum.swift in Sources */,
@@ -1058,6 +1102,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		841CE1372BB5A18A0031A93A /* XCRemoteSwiftPackageReference "GPUImage3" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/BradLarson/GPUImage3";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		841CE1382BB5A18A0031A93A /* GPUImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 841CE1372BB5A18A0031A93A /* XCRemoteSwiftPackageReference "GPUImage3" */;
+			productName = GPUImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 840EC7EB2BAAC6810049B06A /* Project object */;
 }
