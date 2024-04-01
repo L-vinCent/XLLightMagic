@@ -61,6 +61,15 @@ extension UIColor {
         
         return UIColor(r: r, g: g, b: b)
     }
+    
+     func getRGB() -> (CGFloat, CGFloat, CGFloat) {
+        guard let components = self.cgColor.components else {
+            fatalError("请使用RGB方式给标题颜色赋值")
+        }
+        return (components[0] * 255, components[1] * 255, components[2] * 255)
+    }
+  
+
 }
 
 

@@ -38,11 +38,19 @@
 		841CE1392BB5A18A0031A93A /* GPUImage in Frameworks */ = {isa = PBXBuildFile; productRef = 841CE1382BB5A18A0031A93A /* GPUImage */; };
 		841CE13E2BB6A5CF0031A93A /* XHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841CE13D2BB6A5CF0031A93A /* XHomeViewController.swift */; };
 		841CE1412BB6C8BF0031A93A /* XPageLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841CE1402BB6C8BF0031A93A /* XPageLayout.swift */; };
-		841CE1432BB6E2710031A93A /* XPageTitleCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841CE1422BB6E2710031A93A /* XPageTitleCustom.swift */; };
+		841CE1432BB6E2710031A93A /* XPageTitleItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841CE1422BB6E2710031A93A /* XPageTitleItem.swift */; };
 		849144CD2BAFD7FA00444DD1 /* XBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849144CC2BAFD7FA00444DD1 /* XBaseView.swift */; };
 		849144D32BAFDEBC00444DD1 /* XNormalLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849144D22BAFDEBC00444DD1 /* XNormalLayoutView.swift */; };
 		849144D62BAFF1F900444DD1 /* CommonEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849144D52BAFF1F900444DD1 /* CommonEnum.swift */; };
 		849144D82BAFF7D200444DD1 /* XEditInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849144D72BAFF7D200444DD1 /* XEditInfo.swift */; };
+		84B804F52BBA54E500FE5B8B /* XPageTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B804F42BBA54E500FE5B8B /* XPageTitleView.swift */; };
+		84B804F72BBA8A9200FE5B8B /* LTPageScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B804F62BBA8A9200FE5B8B /* LTPageScrollView.swift */; };
+		84B804F92BBA8B3600FE5B8B /* LTPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B804F82BBA8B3600FE5B8B /* LTPageView.swift */; };
+		84B804FB2BBA94DE00FE5B8B /* XPageVCExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B804FA2BBA94DE00FE5B8B /* XPageVCExtention.swift */; };
+		84B804FD2BBA98AE00FE5B8B /* XPageLayoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B804FC2BBA98AE00FE5B8B /* XPageLayoutManager.swift */; };
+		84B805002BBA99CB00FE5B8B /* LTTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B804FF2BBA99CB00FE5B8B /* LTTableView.swift */; };
+		84B805022BBA9E0300FE5B8B /* XScrollExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B805012BBA9E0300FE5B8B /* XScrollExtension.swift */; };
+		84B805042BBAB47A00FE5B8B /* XDispatchQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B805032BBAB47A00FE5B8B /* XDispatchQueue.swift */; };
 		84BDCF5E2BB116F500F43383 /* number_five_style_1.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84BDCF452BB116F500F43383 /* number_five_style_1.plist */; };
 		84BDCF5F2BB116F500F43383 /* number_five_style_2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84BDCF462BB116F500F43383 /* number_five_style_2.plist */; };
 		84BDCF602BB116F500F43383 /* number_five_style_3.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84BDCF472BB116F500F43383 /* number_five_style_3.plist */; };
@@ -166,11 +174,19 @@
 		841CE1312BB58B090031A93A /* XFilterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XFilterManager.swift; sourceTree = "<group>"; };
 		841CE13D2BB6A5CF0031A93A /* XHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XHomeViewController.swift; sourceTree = "<group>"; };
 		841CE1402BB6C8BF0031A93A /* XPageLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XPageLayout.swift; sourceTree = "<group>"; };
-		841CE1422BB6E2710031A93A /* XPageTitleCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XPageTitleCustom.swift; sourceTree = "<group>"; };
+		841CE1422BB6E2710031A93A /* XPageTitleItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XPageTitleItem.swift; sourceTree = "<group>"; };
 		849144CC2BAFD7FA00444DD1 /* XBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XBaseView.swift; sourceTree = "<group>"; };
 		849144D22BAFDEBC00444DD1 /* XNormalLayoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XNormalLayoutView.swift; sourceTree = "<group>"; };
 		849144D52BAFF1F900444DD1 /* CommonEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonEnum.swift; sourceTree = "<group>"; };
 		849144D72BAFF7D200444DD1 /* XEditInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XEditInfo.swift; sourceTree = "<group>"; };
+		84B804F42BBA54E500FE5B8B /* XPageTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XPageTitleView.swift; sourceTree = "<group>"; };
+		84B804F62BBA8A9200FE5B8B /* LTPageScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LTPageScrollView.swift; sourceTree = "<group>"; };
+		84B804F82BBA8B3600FE5B8B /* LTPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LTPageView.swift; sourceTree = "<group>"; };
+		84B804FA2BBA94DE00FE5B8B /* XPageVCExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XPageVCExtention.swift; sourceTree = "<group>"; };
+		84B804FC2BBA98AE00FE5B8B /* XPageLayoutManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XPageLayoutManager.swift; sourceTree = "<group>"; };
+		84B804FF2BBA99CB00FE5B8B /* LTTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LTTableView.swift; sourceTree = "<group>"; };
+		84B805012BBA9E0300FE5B8B /* XScrollExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XScrollExtension.swift; sourceTree = "<group>"; };
+		84B805032BBAB47A00FE5B8B /* XDispatchQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XDispatchQueue.swift; sourceTree = "<group>"; };
 		84BDCF452BB116F500F43383 /* number_five_style_1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = number_five_style_1.plist; sourceTree = "<group>"; };
 		84BDCF462BB116F500F43383 /* number_five_style_2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = number_five_style_2.plist; sourceTree = "<group>"; };
 		84BDCF472BB116F500F43383 /* number_five_style_3.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = number_five_style_3.plist; sourceTree = "<group>"; };
@@ -425,8 +441,13 @@
 		841CE13F2BB6C8050031A93A /* XPageView */ = {
 			isa = PBXGroup;
 			children = (
+				84B804FE2BBA998C00FE5B8B /* Extension */,
+				84B804FC2BBA98AE00FE5B8B /* XPageLayoutManager.swift */,
 				841CE1402BB6C8BF0031A93A /* XPageLayout.swift */,
-				841CE1422BB6E2710031A93A /* XPageTitleCustom.swift */,
+				841CE1422BB6E2710031A93A /* XPageTitleItem.swift */,
+				84B804F42BBA54E500FE5B8B /* XPageTitleView.swift */,
+				84B804F62BBA8A9200FE5B8B /* LTPageScrollView.swift */,
+				84B804F82BBA8B3600FE5B8B /* LTPageView.swift */,
 			);
 			path = XPageView;
 			sourceTree = "<group>";
@@ -439,6 +460,17 @@
 				841CE1182BB276AD0031A93A /* XProportionEnum.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		84B804FE2BBA998C00FE5B8B /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				84B804FA2BBA94DE00FE5B8B /* XPageVCExtention.swift */,
+				84B804FF2BBA99CB00FE5B8B /* LTTableView.swift */,
+				84B805012BBA9E0300FE5B8B /* XScrollExtension.swift */,
+				84B805032BBAB47A00FE5B8B /* XDispatchQueue.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		84BDCF442BB116D200F43383 /* Resources */ = {
@@ -839,6 +871,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				841CE1292BB50D7E0031A93A /* XIDPhotoWebViewController.swift in Sources */,
+				84B804FD2BBA98AE00FE5B8B /* XPageLayoutManager.swift in Sources */,
 				840EC8222BAACC980049B06A /* UIBarButtonItemExtension.swift in Sources */,
 				84BDCFE02BB11E9200F43383 /* XBoardLayoutCell.swift in Sources */,
 				840EC8292BAAD0620049B06A /* XNavigationController.swift in Sources */,
@@ -848,25 +881,31 @@
 				840EC8232BAACC980049B06A /* DispatchQueueExtension.swift in Sources */,
 				841CE1322BB58B090031A93A /* XFilterManager.swift in Sources */,
 				84BDCFE82BB179F100F43383 /* XTemplateTools.swift in Sources */,
+				84B804FB2BBA94DE00FE5B8B /* XPageVCExtention.swift in Sources */,
 				840EC8242BAACC980049B06A /* DictionaryExtension.swift in Sources */,
-				841CE1432BB6E2710031A93A /* XPageTitleCustom.swift in Sources */,
+				841CE1432BB6E2710031A93A /* XPageTitleItem.swift in Sources */,
 				840EC8272BAACF9D0049B06A /* XTabBarController.swift in Sources */,
 				841CE13E2BB6A5CF0031A93A /* XHomeViewController.swift in Sources */,
 				841CE1192BB276AD0031A93A /* XProportionEnum.swift in Sources */,
 				840EC81D2BAACC980049B06A /* ArrayExtensions.swift in Sources */,
 				849144CD2BAFD7FA00444DD1 /* XBaseView.swift in Sources */,
+				84B804F92BBA8B3600FE5B8B /* LTPageView.swift in Sources */,
 				84CB9E962BABD55800E29794 /* XBaseTableViewCell.swift in Sources */,
 				840EC8252BAACC980049B06A /* UIImageExtensions.swift in Sources */,
+				84B805042BBAB47A00FE5B8B /* XDispatchQueue.swift in Sources */,
 				840EC82B2BAAD0D30049B06A /* XWebViewController.swift in Sources */,
 				840EC81E2BAACC980049B06A /* StringExtension.swift in Sources */,
 				84BDCFDC2BB11D1A00F43383 /* XBaseCollectionViewCell.swift in Sources */,
+				84B805022BBA9E0300FE5B8B /* XScrollExtension.swift in Sources */,
 				840EC82D2BAAD7670049B06A /* TestVC.swift in Sources */,
+				84B805002BBA99CB00FE5B8B /* LTTableView.swift in Sources */,
 				84CB9EA42BAC5C9300E29794 /* XImageEditView.swift in Sources */,
 				840EC8202BAACC980049B06A /* UIColorExtension.swift in Sources */,
 				84CB9E902BAADF5F00E29794 /* XModel.swift in Sources */,
 				841CE1242BB43A2D0031A93A /* XSuccessView.swift in Sources */,
 				841CE12E2BB571300031A93A /* XImageAndTextCell.swift in Sources */,
 				840EC81F2BAACC980049B06A /* UIDeviceExtension.swift in Sources */,
+				84B804F52BBA54E500FE5B8B /* XPageTitleView.swift in Sources */,
 				841CE1212BB421BE0031A93A /* XHUD.swift in Sources */,
 				84BDCFE62BB1704000F43383 /* XTemplateModel.swift in Sources */,
 				849144D82BAFF7D200444DD1 /* XEditInfo.swift in Sources */,
@@ -877,6 +916,7 @@
 				840EC8112BAACAF20049B06A /* XBaseViewController.swift in Sources */,
 				841CE1412BB6C8BF0031A93A /* XPageLayout.swift in Sources */,
 				849144D32BAFDEBC00444DD1 /* XNormalLayoutView.swift in Sources */,
+				84B804F72BBA8A9200FE5B8B /* LTPageScrollView.swift in Sources */,
 				841CE11B2BB3C14D0031A93A /* XEditContainerView.swift in Sources */,
 				849144D62BAFF1F900444DD1 /* CommonEnum.swift in Sources */,
 				841CE11F2BB41B2D0031A93A /* UIScrollViewExtensions.swift in Sources */,

@@ -6,7 +6,12 @@
 //
 
 import UIKit
-class XPageLayout{
+
+let NORMAL_BASE_COLOR: UIColor = UIColor(r: 153, g:153, b: 153)
+let SELECT_BASE_COLOR: UIColor = UIColor(r: 255, g: 255, b: 255)
+let glt_sliderDefaultWidth: CGFloat = 40.0001 //加小数点，如果外部正好设置为40的高度，内部会认为还是自动适配宽度
+
+public class XPageLayout: NSObject {
     
     /**
      自定义每一个item的宽，如果有值内部将不再计算每一个item的宽
@@ -16,28 +21,28 @@ class XPageLayout{
     @objc public lazy var layoutItemWidths: [CGFloat] = [CGFloat]()
     
     /** pageView背景颜色 **/
-    @objc public var titleViewBgColor: UIColor? = UIColor(r: 255, g: 239, b: 213)
+    @objc public var titleViewBgColor: UIColor? = UIColor.black
     
     /** 标题颜色，请使用RGB赋值 **/
-    @objc public var titleColor: UIColor? = UIColor.fontGray600
+    @objc public var titleColor: UIColor? = NORMAL_BASE_COLOR
     
     /** 标题选中颜色，请使用RGB赋值 **/
-    @objc public lazy var titleSelectColor: UIColor? = UIColor.white
+    @objc public lazy var titleSelectColor: UIColor? = SELECT_BASE_COLOR
     
     /** 标题字号 **/
-    @objc public lazy var titleFont: UIFont? = UIFont.systemFont(ofSize: 16)
+    @objc public lazy var titleFont: UIFont? = UIFont.systemFont(ofSize: 15)
     
-    /** 滑块底部线的颜色 - UIColor.blue **/
-    @objc public lazy var bottomLineColor: UIColor? = UIColor.red
+    /** 滑块底部线的颜色 - UIColor.blue,传多个颜色就是渐变色 **/
+    @objc public lazy var bottomLineColors: [UIColor] = [UIColor.red]
     
     /** pageView底部线的颜色 **/
-    @objc public lazy var pageBottomLineColor: UIColor? = UIColor(r: 230, g: 230, b: 230)
+    @objc public lazy var pageBottomLineColor: UIColor? = UIColor.clear
     
     /** 整个滑块的高，pageTitleView的高 **/
     @objc public lazy var sliderHeight: CGFloat = 44.0
     
     /** 单个滑块的宽度, 一旦设置，将不再自动计算宽度，而是固定为你传递的值 **/
-    @objc public lazy var sliderWidth: CGFloat = 40
+    @objc public lazy var sliderWidth: CGFloat = glt_sliderDefaultWidth
     
     /**
      * 如果刚开始的布局不希望从最左边开始， 只想平均分配在整个宽度中，设置它为true
@@ -46,15 +51,15 @@ class XPageLayout{
     @objc public lazy var isAverage: Bool = false
     
     /** 滑块底部线的高 **/
-    @objc public lazy var bottomLineHeight: CGFloat = 2.0
+    @objc public lazy var bottomLineHeight: CGFloat = 4.0
     
     /** 滑块底部线圆角 **/
-    @objc public lazy var bottomLineCornerRadius: CGFloat = 0.0
+    @objc public lazy var bottomLineCornerRadius: CGFloat = 2.0
     
     /** 是否隐藏滑块、底部线**/
     @objc public lazy var isHiddenSlider: Bool = false
     
-    /** 标题直接的间隔（标题距离下一个标题的间隔）**/
+    /** 标题之间的间隔（标题距离下一个标题的间隔）**/
     @objc public lazy var titleMargin: CGFloat = 30.0
     
     /** 距离最左边和最右边的距离 **/

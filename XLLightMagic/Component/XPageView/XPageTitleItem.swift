@@ -14,7 +14,7 @@ private struct AssociatedKeys {
     static var glt_isSelected: Void?
 }
 
-@objc public protocol XPageTitleCustom where Self:UIButton{
+@objc public protocol XPageTitleItem where Self:UIButton{
     
     
     /// 当前选中、取消选中的索引
@@ -39,7 +39,7 @@ private struct AssociatedKeys {
   
 }
 
-public extension XPageTitleCustom {
+public extension XPageTitleItem {
     
     /// 当前选中以及取消选中
     var glt_isSelected: Bool {

@@ -13,6 +13,27 @@ class TestVC:XBaseViewController {
         return [
             ["title":"网页证件照"],
             ["title":"选择照片"],
+            ["title":"选择照片"],
+            ["title":"选择照片"],
+            ["title":"选择照片"],
+            ["title":"选择照片"],
+            ["title":"选择照片"],
+            ["title":"选择照片"],
+            ["title":"选择照片"],
+            ["title":"选择照片"],
+            ["title":"选择照片"],
+            ["title":"选择照片"],
+            ["title":"选择照片"],
+            ["title":"选择照片"],
+            ["title":"选择照片"],
+            ["title":"选择照片"],
+            ["title":"选择照片"],
+            ["title":"选择照片"],
+            ["title":"选择照片"],
+            ["title":"选择照片"],
+            ["title":"选择照片"],
+            ["title":"选择照片"],
+            ["title":"选择照片"],
         ]
     }()
     
@@ -33,9 +54,12 @@ class TestVC:XBaseViewController {
     
     override func configUI() {
         view.addSubview(tableView)
+        self.glt_scrollView = self.tableView
+        
         tableView.snp.makeConstraints {
             $0.edges.equalTo(self.view.xsnp.edges).priority(.low)
-            $0.top.equalToSuperview()
+            $0.top.equalToSuperview().offset(44)
+            $0.height.equalToSuperview().offset(-44)
         }
         
     }

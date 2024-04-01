@@ -13,6 +13,7 @@ import MJRefresh
 
 //MARK: 应用默认颜色
 extension UIColor {
+    
     //主题背景黑
     class var themeBackground: UIColor {
         return UIColor.hex(hexString:"#1E1E1E")
@@ -55,6 +56,11 @@ extension UIColor {
     
     class var selectColor: UIColor{
         return UIColor.hex(hexString:"#1296db")
+    }
+    
+    //渐变色组
+    class var gradientColors: [UIColor]{
+        return [UIColor.hex(hexString: "FF4D4D"),UIColor.hex(hexString: "FFAF40"),UIColor.hex(hexString: "32FF7E"),UIColor.hex(hexString: "37BFFA"),UIColor.hex(hexString: "3E5DFF")]
     }
     
 }
