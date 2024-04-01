@@ -1,5 +1,5 @@
 //
-//  LTPageScrollView.swift
+//  XPageScrollView.swift
 //  XLLightMagic
 //
 //  Created by admin on 2024/4/1.
@@ -7,9 +7,9 @@
 
 import UIKit
 
-public class LTPageScrollView: UIScrollView, UIGestureRecognizerDelegate {
+public class XPageScrollView: UIScrollView, UIGestureRecognizerDelegate {
     
-    /** 如果LTPageView 与 LTSimple结合使用 需要将它设置为true */
+    /** 如果XPageView 与 XPageLayout结合使用 需要将它设置为true */
     @objc public var isSimpeMix = false
     
     @objc public var gestureRecognizerEnabledHandle: ((Bool) -> Void)?

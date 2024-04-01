@@ -8,9 +8,9 @@
 import UIKit
 
 typealias scrollIndexHandle = () -> Int
-public typealias LTCreateViewControllerHandle = (Int) -> Void
-public typealias LTDidSelectTitleViewHandle = (Int) -> Void
-public typealias LTItemViewClassHandle = () -> XPageTitleItem
+public typealias XCreateViewControllerHandle = (Int) -> Void
+public typealias XDidSelectTitleViewHandle = (Int) -> Void
+public typealias XItemViewClassHandle = () -> XPageTitleItem
 
 @objc public class XPageTitleView:UIView{
     
@@ -20,29 +20,29 @@ public typealias LTItemViewClassHandle = () -> XPageTitleItem
     //标题数组
     private var titles: [String]
     
-    //设置默认布局，具体设置请查看LTLayout类
-    private var layout: XPageLayout
+    //设置默认布局，具体设置请查看XPageConfig类
+    private var layout: XPageConfig
     
     //存储文本宽度数组
-    private lazy var glt_textWidths: [CGFloat] = []
+    private lazy var x_textWidths: [CGFloat] = []
     
     //存储线的宽度数组
-    private lazy var glt_lineWidths: [CGFloat] = []
+    private lazy var x_lineWidths: [CGFloat] = []
     
     //存储所有的button
-    private lazy var glt_buttons: [XPageTitleItem] = []
+    private lazy var x_buttons: [XPageTitleItem] = []
     
     //当前的位置
-    private lazy var glt_currentIndex: Int = 0
+    private lazy var x_currentIndex: Int = 0
     
     //标记是否是点击
     private lazy var isClick: Bool = false
     
     //起始偏移量
-    private lazy var glt_startOffsetX: CGFloat = 0.0
+    private lazy var x_startOffsetX: CGFloat = 0.0
     
     //是否有点击动画
-    private lazy var glt_isClickScrollAnimation = false
+    private lazy var x_isClickScrollAnimation = false
     
     //是否有点击动画 其他类使用
     final lazy var isClickScrollAnimation = false
@@ -54,24 +54,24 @@ public typealias LTItemViewClassHandle = () -> XPageTitleItem
     var scrollIndexHandle: scrollIndexHandle?
     
     //创建子控制器的回调
-    var glt_createViewControllerHandle: LTCreateViewControllerHandle?
+    var x_createViewControllerHandle: XCreateViewControllerHandle?
     
     //选中标题view回调
-    var glt_didSelectTitleViewHandle: LTDidSelectTitleViewHandle?
+    var x_didSelectTitleViewHandle: XDidSelectTitleViewHandle?
     
     //设置pageView的代理
-    weak var delegate: LTPageViewDelegate?
+    weak var delegate: XPageViewDelegate?
     
     //返回所有的数组
     func allItemViews() -> [XPageTitleItem] {
-        return glt_buttons
+        return x_buttons
     }
     
     var itemViewClass: XPageTitleItem.Type?
     
-    private lazy var glt_titleColor = (layout.titleColor ?? NORMAL_BASE_COLOR).getRGB()
+    private lazy var x_titleColor = (layout.titleColor ?? NORMAL_BASE_COLOR).getRGB()
     
-    private lazy var glt_selectTitleColor = (layout.titleSelectColor ?? SELECT_BASE_COLOR).getRGB()
+    private lazy var x_selectTitleColor = (layout.titleSelectColor ?? SELECT_BASE_COLOR).getRGB()
     
     
     private lazy var sliderScrollView: UIScrollView = {
@@ -100,7 +100,7 @@ public typealias LTItemViewClassHandle = () -> XPageTitleItem
     
     
     
-    @objc  init(frame: CGRect, titles: [String], layout: XPageLayout, itemViewClass: XPageTitleItem.Type? = nil) {
+    @objc  init(frame: CGRect, titles: [String], layout: XPageConfig, itemViewClass: XPageTitleItem.Type? = nil) {
         self.titles = titles
         self.layout = layout
         self.itemViewClass = itemViewClass
@@ -112,7 +112,7 @@ public typealias LTItemViewClassHandle = () -> XPageTitleItem
     /* 滚动到某个位置 */
     @objc public func scrollToIndex(index: Int)  {
         var index = index
-        glt_setupScrollToIndex(&index)
+        x_setupScrollToIndex(&index)
     }
     
     required public init?(coder aDecoder: NSCoder) {
@@ -142,55 +142,55 @@ extension XPageTitleView{
             if layout.isAverage {
                 let textAverageW = (width - layout.lrMargin * 2.0 - layout.titleMargin * CGFloat(titles.count - 1)) / CGFloat(titles.count)
                 if !_isLayoutWidth {
-                    glt_textWidths.append(textAverageW)
+                    x_textWidths.append(textAverageW)
                 }
-                glt_lineWidths.append(textAverageW)
+                x_lineWidths.append(textAverageW)
                 continue
             }
             if text.count == 0 {
                 if !_isLayoutWidth {
-                    glt_textWidths.append(60)
+                    x_textWidths.append(60)
                 }
-                glt_lineWidths.append(60)
+                x_lineWidths.append(60)
                 continue
             }
             let textW = text.boundingRect(with: CGSize(width: CGFloat(MAXFLOAT), height: 8), options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font : layout.titleFont ?? UIFont.systemFont(ofSize: 16)], context: nil).size.width
             if !_isLayoutWidth {
-                glt_textWidths.append(textW)
+                x_textWidths.append(textW)
             }
-            glt_lineWidths.append(textW)
+            x_lineWidths.append(textW)
         }
         
         if _isLayoutWidth {
-            glt_textWidths = layout.layoutItemWidths
+            x_textWidths = layout.layoutItemWidths
         }
         
         // 按钮布局
         var upX: CGFloat = layout.lrMargin
         let subH = height - layout.bottomLineHeight
         for index in 0..<titles.count {
-            let subW = glt_textWidths[index]
+            let subW = x_textWidths[index]
             let buttonReact = CGRect(x: upX, y: 0, width: subW, height: subH)
             let button = subButton(frame: buttonReact, flag: index, title: titles[index], parentView: sliderScrollView)
             let color = (index == 0 ? layout.titleSelectColor : layout.titleColor)
             button.setTitleColor(color, for: .normal)
             upX = button.frame.origin.x + subW + layout.titleMargin
-            glt_buttons.append(button)
-            button.glt_index = index
-            button.glt_isSelected = index == 0
-            button.glt_layoutSubviews?()
+            x_buttons.append(button)
+            button.x_index = index
+            button.x_isSelected = index == 0
+            button.x_layoutSubviews?()
         }
         
-        let firstButton = glt_buttons[0]
-        let firstLineWidth = glt_lineWidths[0]
-        let firstTextWidth = glt_textWidths[0]
+        let firstButton = x_buttons[0]
+        let firstLineWidth = x_lineWidths[0]
+        let firstTextWidth = x_textWidths[0]
         
         if layout.isNeedScale {
             firstButton.transform = CGAffineTransform(scaleX: layout.scale , y: layout.scale)
         }
         
         // lineView的宽度为第一个的宽度
-        if layout.sliderWidth == glt_sliderDefaultWidth {
+        if layout.sliderWidth == x_sliderDefaultWidth {
             if layout.isAverage {
                 sliderLineView.width = firstLineWidth
                 sliderLineView.left = (firstTextWidth - firstLineWidth) * 0.5 + layout.lrMargin
@@ -234,22 +234,22 @@ extension XPageTitleView{
     private func setupTitleSelectIndex(_ btnSelectIndex: Int) {
 
         guard let scrollView = mainScrollView else { return }
-        if glt_currentIndex == btnSelectIndex || scrollView.isDragging || scrollView.isDecelerating {
+        if x_currentIndex == btnSelectIndex || scrollView.isDragging || scrollView.isDecelerating {
             return
         }
         let totalW = bounds.width
         isClick = true
-        glt_isClickScrollAnimation = true
+        x_isClickScrollAnimation = true
         scrollView.setContentOffset(CGPoint(x: totalW * CGFloat(btnSelectIndex), y: 0), animated: isClickScrollAnimation)
         if isClickScrollAnimation {
             return
         }
-        let nextButton = glt_buttons[btnSelectIndex]
-        if layout.sliderWidth == glt_sliderDefaultWidth {
+        let nextButton = x_buttons[btnSelectIndex]
+        if layout.sliderWidth == x_sliderDefaultWidth {
             if layout.isAverage {
-                let adjustX = (nextButton.frame.size.width - glt_lineWidths[btnSelectIndex]) * 0.5
+                let adjustX = (nextButton.frame.size.width - x_lineWidths[btnSelectIndex]) * 0.5
                 sliderLineView.frame.origin.x = nextButton.frame.origin.x + adjustX
-                sliderLineView.frame.size.width = glt_lineWidths[btnSelectIndex]
+                sliderLineView.frame.size.width = x_lineWidths[btnSelectIndex]
             }else {
                 sliderLineView.frame.origin.x = nextButton.frame.origin.x
                 sliderLineView.frame.size.width = nextButton.frame.width
@@ -257,7 +257,7 @@ extension XPageTitleView{
         }else {
             setupSliderLineViewWidth(currentButton: nextButton)
         }
-        glt_currentIndex = btnSelectIndex
+        x_currentIndex = btnSelectIndex
     }
     
  
@@ -266,7 +266,7 @@ extension XPageTitleView{
         guard titles.count == self.titles.count else { return }
         guard titles.count != 0 else { return }
         self.titles = titles
-        glt_textWidths.removeAll()
+        x_textWidths.removeAll()
         
         //是否自定义了item的宽
         let _isLayoutWidth = layout.layoutItemWidths.count > 0
@@ -276,41 +276,41 @@ extension XPageTitleView{
             if layout.isAverage {
                 let textAverageW = (width - layout.lrMargin * 2.0 - layout.titleMargin * CGFloat(titles.count - 1)) / CGFloat(titles.count)
                 if !_isLayoutWidth {
-                    glt_textWidths.append(textAverageW)
+                    x_textWidths.append(textAverageW)
                 }
-                glt_lineWidths.append(textAverageW)
+                x_lineWidths.append(textAverageW)
                 continue
             }
             if text.count == 0 {
                 if !_isLayoutWidth {
-                    glt_textWidths.append(60)
+                    x_textWidths.append(60)
                 }
-                glt_lineWidths.append(60)
+                x_lineWidths.append(60)
                 continue
             }
             let textW = text.boundingRect(with: CGSize(width: CGFloat(MAXFLOAT), height: 8), options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font : layout.titleFont ?? UIFont.systemFont(ofSize: 16)], context: nil).size.width
             if !_isLayoutWidth {
-                glt_textWidths.append(ceil(textW))
+                x_textWidths.append(ceil(textW))
             }
-            glt_lineWidths.append(ceil(textW))
+            x_lineWidths.append(ceil(textW))
         }
         
         if _isLayoutWidth {
-            glt_textWidths = layout.layoutItemWidths
+            x_textWidths = layout.layoutItemWidths
         }
         
         // 按钮布局
         var upX: CGFloat = layout.lrMargin
         let subH = height - layout.bottomLineHeight
         for index in 0..<titles.count {
-            let subW = glt_textWidths[index]
+            let subW = x_textWidths[index]
             let buttonReact = CGRect(x: upX, y: 0, width: subW, height: subH)
-            let button = glt_buttons[index]
+            let button = x_buttons[index]
             button.transform = .identity
             button.frame = buttonReact
             button.setTitle(titles[index], for: .normal)
             upX = button.frame.origin.x + subW + layout.titleMargin
-            button.glt_layoutSubviews?()
+            button.x_layoutSubviews?()
         }
         
         if layout.isAverage {
@@ -318,16 +318,16 @@ extension XPageTitleView{
             return
         }
         
-        let firstButton = glt_buttons[glt_currentIndex]
-        let firstLineWidth = glt_lineWidths[glt_currentIndex]
-        let firstTextWidth = glt_textWidths[glt_currentIndex]
+        let firstButton = x_buttons[x_currentIndex]
+        let firstLineWidth = x_lineWidths[x_currentIndex]
+        let firstTextWidth = x_textWidths[x_currentIndex]
         
         if layout.isNeedScale {
             firstButton.transform = CGAffineTransform(scaleX: layout.scale , y: layout.scale)
         }
         
         // lineView的宽度为第一个的宽度
-        if layout.sliderWidth == glt_sliderDefaultWidth {
+        if layout.sliderWidth == x_sliderDefaultWidth {
             if layout.isAverage {
                 sliderLineView.width = firstLineWidth
                 sliderLineView.left = (firstTextWidth - firstLineWidth) * 0.5 + layout.lrMargin
@@ -368,32 +368,32 @@ extension XPageTitleView{
 //pageView 滑动的代理方法
 extension XPageTitleView {
     
-    public func glt_scrollViewDidScroll(_ scrollView: UIScrollView) {
+    public func x_scrollViewDidScroll(_ scrollView: UIScrollView) {
         scrollViewDidScrollOffsetX(scrollView.contentOffset.x)
     }
     
-    public func glt_scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-        delegate?.glt_scrollViewWillBeginDragging?(scrollView)
-        glt_startOffsetX = scrollView.contentOffset.x
+    public func x_scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        delegate?.x_scrollViewWillBeginDragging?(scrollView)
+        x_startOffsetX = scrollView.contentOffset.x
     }
     
-    public func glt_scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        delegate?.glt_scrollViewDidEndDragging?(scrollView, willDecelerate: decelerate)
+    public func x_scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        delegate?.x_scrollViewDidEndDragging?(scrollView, willDecelerate: decelerate)
     }
     
-    public func glt_scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
-        if glt_isClickScrollAnimation {
+    public func x_scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
+        if x_isClickScrollAnimation {
             let index = currentIndex()
-            glt_createViewControllerHandle?(index)
+            x_createViewControllerHandle?(index)
             setupSlierScrollToCenter(offsetX: scrollView.contentOffset.x, index: index)
             setupIsClickScrollAnimation(index: index)
-            glt_didSelectTitleViewHandle?(index)
+            x_didSelectTitleViewHandle?(index)
         }
     }
 }
 
 
-extension XPageTitleView: LTPageViewDelegate {
+extension XPageTitleView: XPageViewDelegate {
     
     private func scrollViewDidScrollOffsetX(_ offsetX: CGFloat)  {
         
@@ -401,12 +401,12 @@ extension XPageTitleView: LTPageViewDelegate {
         
         let index = currentIndex()
         
-        if glt_currentIndex != index {
+        if x_currentIndex != index {
             
             //如果开启滚动动画
             if isClickScrollAnimation {
                 //如果不是点击事件继续在这个地方设置偏移
-                if !glt_isClickScrollAnimation {
+                if !x_isClickScrollAnimation {
                     setupSlierScrollToCenter(offsetX: offsetX, index: index)
                 }
             }else {
@@ -414,8 +414,8 @@ extension XPageTitleView: LTPageViewDelegate {
                 setupSlierScrollToCenter(offsetX: offsetX, index: index)
             }
             
-            let upButton = glt_buttons[glt_currentIndex]
-            let currentButton = glt_buttons[index]
+            let upButton = x_buttons[x_currentIndex]
+            let currentButton = x_buttons[index]
             
             // 如果是点击的话
             if isClick {
@@ -437,20 +437,20 @@ extension XPageTitleView: LTPageViewDelegate {
             //如果开启滚动动画
             if isClickScrollAnimation {
                 //如果不是点击事件继续在这个地方设置偏移
-                if !glt_isClickScrollAnimation {
-                    glt_createViewControllerHandle?(index)
-                    glt_didSelectTitleViewHandle?(index)
-                    upButton.glt_isSelected = false
-                    currentButton.glt_isSelected = true
+                if !x_isClickScrollAnimation {
+                    x_createViewControllerHandle?(index)
+                    x_didSelectTitleViewHandle?(index)
+                    upButton.x_isSelected = false
+                    currentButton.x_isSelected = true
                 }
             }else {
                 //默认的设置
-                glt_createViewControllerHandle?(index)
-                glt_didSelectTitleViewHandle?(index)
-                upButton.glt_isSelected = false
-                currentButton.glt_isSelected = true
+                x_createViewControllerHandle?(index)
+                x_didSelectTitleViewHandle?(index)
+                upButton.x_isSelected = false
+                currentButton.x_isSelected = true
             }
-            glt_currentIndex = index
+            x_currentIndex = index
         }
         isClick = false
         
@@ -458,7 +458,7 @@ extension XPageTitleView: LTPageViewDelegate {
     
     //MARK: 让title的ScrollView滚动到中心点位置
     private func setupSlierScrollToCenter(offsetX: CGFloat, index: Int)  {
-        let currentButton = glt_buttons[index]
+        let currentButton = x_buttons[index]
         let btnCenterX = currentButton.center.x
         var scrollX = btnCenterX - sliderScrollView.bounds.width * 0.5
         if scrollX < 0 {
@@ -485,22 +485,22 @@ extension XPageTitleView: LTPageViewDelegate {
         if !isClickScrollAnimation {
             return
         }
-        for button in glt_buttons {
+        for button in x_buttons {
             if button.tag == index {
                 if layout.isNeedScale {
                     button.transform = CGAffineTransform(scaleX: layout.scale , y: layout.scale)
                 }
                 button.setTitleColor(self.layout.titleSelectColor, for: .normal)
-                button.glt_isSelected = true
+                button.x_isSelected = true
             }else {
                 if layout.isNeedScale {
                     button.transform = CGAffineTransform(scaleX: 1.0 , y: 1.0)
                 }
                 button.setTitleColor(self.layout.titleColor, for: .normal)
-                button.glt_isSelected = false
+                button.x_isSelected = false
             }
         }
-        glt_isClickScrollAnimation = false
+        x_isClickScrollAnimation = false
     }
 }
 
@@ -509,7 +509,7 @@ extension XPageTitleView: LTPageViewDelegate {
 //MARK: 处理刚进入滚动到第几个位置
 extension XPageTitleView {
     
-    private func glt_setupScrollToIndex(_ index:inout Int) {
+    private func x_setupScrollToIndex(_ index:inout Int) {
         if index >= titles.count {
             print("超过最大数量限制, 请正确设置值, 默认这里取第一个")
             index = 0
@@ -517,14 +517,14 @@ extension XPageTitleView {
         
         if isClickScrollAnimation {
             
-            let nextButton = glt_buttons[index]
+            let nextButton = x_buttons[index]
             
-            if layout.sliderWidth == glt_sliderDefaultWidth {
+            if layout.sliderWidth == x_sliderDefaultWidth {
                 
                 if layout.isAverage {
-                    let adjustX = (nextButton.frame.size.width - glt_lineWidths[index]) * 0.5
+                    let adjustX = (nextButton.frame.size.width - x_lineWidths[index]) * 0.5
                     sliderLineView.frame.origin.x = nextButton.frame.origin.x + adjustX
-                    sliderLineView.frame.size.width = glt_lineWidths[index]
+                    sliderLineView.frame.size.width = x_lineWidths[index]
                 }else {
                     sliderLineView.frame.origin.x = nextButton.frame.origin.x
                     sliderLineView.frame.size.width = nextButton.frame.width
@@ -532,7 +532,7 @@ extension XPageTitleView {
                 
             }else {
                 if isFirstLoad {
-                    setupSliderLineViewWidth(currentButton: glt_buttons[index])
+                    setupSliderLineViewWidth(currentButton: x_buttons[index])
                     isFirstLoad = false
                 }
             }
@@ -558,21 +558,21 @@ extension XPageTitleView {
         let scrollContenSizeW: CGFloat = bounds.width * CGFloat(titles.count)
         // 目的是滑动到最后一个的时候 不让其再往后滑动
         if offsetX + scrollW >= scrollContenSizeW {
-            if layout.sliderWidth == glt_sliderDefaultWidth {
-                let adjustX = (glt_textWidths.last! - glt_lineWidths.last!) * 0.5
+            if layout.sliderWidth == x_sliderDefaultWidth {
+                let adjustX = (x_textWidths.last! - x_lineWidths.last!) * 0.5
                 sliderLineView.frame.origin.x = layout.lrMargin + adjustX
             }else {
-                setupSliderLineViewWidth(currentButton: glt_buttons.last!)
+                setupSliderLineViewWidth(currentButton: x_buttons.last!)
             }
             offsetX = scrollContenSizeW - scrollW - 0.5
         }
         // 目的是滑动到第一个的时候 不让其再往前滑动
         if offsetX <= 0 {
-            if layout.sliderWidth == glt_sliderDefaultWidth {
-                let adjustX = (glt_textWidths[0] - glt_lineWidths[0]) * 0.5
+            if layout.sliderWidth == x_sliderDefaultWidth {
+                let adjustX = (x_textWidths[0] - x_lineWidths[0]) * 0.5
                 sliderLineView.frame.origin.x = layout.lrMargin + adjustX
             }else {
-                sliderLineView.frame.origin.x = ((glt_textWidths[0] + layout.lrMargin * 2) - layout.sliderWidth) * 0.5
+                sliderLineView.frame.origin.x = ((x_textWidths[0] + layout.lrMargin * 2) - layout.sliderWidth) * 0.5
             }
             offsetX = 0.5
         }
@@ -580,7 +580,7 @@ extension XPageTitleView {
         var sourceIndex = Int(offsetX / scrollW)
         //向下取整 目的是减去整数位，只保留小数部分
         var progress = (offsetX / scrollW) - floor(offsetX / scrollW)
-        if offsetX > glt_startOffsetX { // 向左滑动
+        if offsetX > x_startOffsetX { // 向左滑动
             //向左滑动 下个位置比源位置下标 多1
             nextIndex = nextIndex + 1
         }else { // 向右滑动
@@ -588,13 +588,13 @@ extension XPageTitleView {
             sourceIndex = sourceIndex + 1
             progress = 1 - progress
         }
-        let nextButton = glt_buttons[nextIndex]
-        let currentButton = glt_buttons[sourceIndex]
+        let nextButton = x_buttons[nextIndex]
+        let currentButton = x_buttons[sourceIndex]
         if layout.isColorAnimation {
         
-            let colorDelta = (glt_selectTitleColor.0 - glt_titleColor.0, glt_selectTitleColor.1 - glt_titleColor.1, glt_selectTitleColor.2 - glt_titleColor.2)
-            let nextColor = UIColor(r: UInt32(glt_titleColor.0 + colorDelta.0 * progress), g: UInt32(glt_titleColor.1 + colorDelta.1 * progress), b: UInt32(glt_titleColor.2 + colorDelta.2 * progress))
-            let currentColor = UIColor(r: UInt32(glt_selectTitleColor.0 - colorDelta.0 * progress), g: UInt32(glt_selectTitleColor.1 - colorDelta.1 * progress), b: UInt32(glt_selectTitleColor.2 - colorDelta.2 * progress))
+            let colorDelta = (x_selectTitleColor.0 - x_titleColor.0, x_selectTitleColor.1 - x_titleColor.1, x_selectTitleColor.2 - x_titleColor.2)
+            let nextColor = UIColor(r: UInt32(x_titleColor.0 + colorDelta.0 * progress), g: UInt32(x_titleColor.1 + colorDelta.1 * progress), b: UInt32(x_titleColor.2 + colorDelta.2 * progress))
+            let currentColor = UIColor(r: UInt32(x_selectTitleColor.0 - colorDelta.0 * progress), g: UInt32(x_selectTitleColor.1 - colorDelta.1 * progress), b: UInt32(x_selectTitleColor.2 - colorDelta.2 * progress))
             currentButton.setTitleColor(currentColor, for: .normal)
             nextButton.setTitleColor(nextColor, for: .normal)
         }
@@ -604,7 +604,7 @@ extension XPageTitleView {
             nextButton.transform = CGAffineTransform(scaleX: 1.0 + scaleDelta, y: 1.0 + scaleDelta)
         }
         // 判断是否是自定义Slider的宽度（这里指没有自定义）
-        if layout.sliderWidth == glt_sliderDefaultWidth {
+        if layout.sliderWidth == x_sliderDefaultWidth {
             
             if layout.isAverage {
                 /*
@@ -612,18 +612,18 @@ extension XPageTitleView {
                  * 如果是不是平均分配 按钮的宽度 = 线的宽度
                  */
                 // 计算宽度的该变量
-                let moveW = glt_lineWidths[nextIndex] - glt_lineWidths[sourceIndex]
+                let moveW = x_lineWidths[nextIndex] - x_lineWidths[sourceIndex]
                 
                 // （按钮的宽度 - 线的宽度）/ 2
-                let nextButtonAdjustX = (nextButton.frame.size.width - glt_lineWidths[nextIndex]) * 0.5
+                let nextButtonAdjustX = (nextButton.frame.size.width - x_lineWidths[nextIndex]) * 0.5
                 
                 // （按钮的宽度 - 线的宽度）/ 2
-                let currentButtonAdjustX = (currentButton.frame.size.width - glt_lineWidths[sourceIndex]) * 0.5
+                let currentButtonAdjustX = (currentButton.frame.size.width - x_lineWidths[sourceIndex]) * 0.5
                 
                 // x的该变量
                 let moveX = (nextButton.frame.origin.x + nextButtonAdjustX) - (currentButton.frame.origin.x + currentButtonAdjustX)
                 
-                self.sliderLineView.frame.size.width = glt_lineWidths[sourceIndex] + moveW * progress
+                self.sliderLineView.frame.size.width = x_lineWidths[sourceIndex] + moveW * progress
                 
                 self.sliderLineView.frame.origin.x = currentButton.frame.origin.x + moveX * progress + currentButtonAdjustX
                 
@@ -699,7 +699,7 @@ extension XPageTitleView {
 }
 
 class XPageButton: UIButton, XPageTitleItem {
-    var glt_index: Int = 0
+    var x_index: Int = 0
 }
 
 

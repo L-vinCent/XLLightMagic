@@ -13,7 +13,7 @@ let SettingBarHeight = 46.0
 
 class XHomeViewController:XBaseViewController{
     
-    //设置默认布局，具体设置请查看LTLayout类
+    //设置默认布局，具体设置请查看XPageConfig类
     
     
     lazy var settingView: UIView = {
@@ -32,7 +32,7 @@ class XHomeViewController:XBaseViewController{
        }()
     
     private lazy var titleView: XPageTitleView = {
-        let layout = XPageLayout()
+        let layout = XPageConfig()
         layout.bottomLineColors = UIColor.gradientColors
         layout.titleViewBgColor = UIColor.themeBackground
         let titleView = XPageTitleView(frame: CGRect(x: 0, y:UIDevice.xd_safeDistanceTop()+SettingBarHeight , width: view.width, height: layout.sliderHeight), titles: ["测试","哈哈哈哈哈哈","asdasd","asdasd","asdasd"], layout: layout, itemViewClass: nil)
@@ -40,7 +40,7 @@ class XHomeViewController:XBaseViewController{
     }()
     
     private lazy var titles: [String] = {
-        return ["此处标题View支持", "自定义", "查看", "LTPageView具体使用"]
+        return ["此处标题View支持", "自定义", "查看", "XPageView具体使用"]
     }()
     
     private lazy var viewControllers: [UIViewController] = {
@@ -51,8 +51,8 @@ class XHomeViewController:XBaseViewController{
         return vcs
     }()
     
-    private lazy var layout: XPageLayout = {
-        let layout = XPageLayout()
+    private lazy var layout: XPageConfig = {
+        let layout = XPageConfig()
         layout.bottomLineColors = UIColor.gradientColors
         layout.titleViewBgColor = UIColor.themeBackground
         layout.bottomLineCornerRadius = 2.0
@@ -70,7 +70,7 @@ class XHomeViewController:XBaseViewController{
     }
     
     private lazy var simpleManager: XPageLayoutManager = {
-        let simpleManager = XPageLayoutManager(frame: managerReact(), viewControllers: viewControllers, titles: titles, currentViewController: self, layout: layout/*, itemViewClass: LTCustomTitleItemView.self*/)
+        let simpleManager = XPageLayoutManager(frame: managerReact(), viewControllers: viewControllers, titles: titles, currentViewController: self, layout: layout)
         /* 设置代理 监听滚动 */
         simpleManager.delegate = self
         return simpleManager
@@ -119,15 +119,15 @@ extension XHomeViewController {
     }
 }
 
-extension XHomeViewController: LTSimpleScrollViewDelegate {
+extension XHomeViewController: XSimpleScrollViewDelegate {
     
     //MARK: 滚动代理方法
-    func glt_scrollViewDidScroll(_ scrollView: UIScrollView) {
+    func x_scrollViewDidScroll(_ scrollView: UIScrollView) {
         //        print("offset -> ", scrollView.contentOffset.y)
     }
     
     //MARK: 控制器刷新事件代理方法
-    func glt_refreshScrollView(_ scrollView: UIScrollView, _ index: Int) {
+    func x_refreshScrollView(_ scrollView: UIScrollView, _ index: Int) {
         //注意这里循环引用问题。
 //        scrollView.mj_header = MJRefreshNormalHeader {[weak scrollView] in
 //            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: {

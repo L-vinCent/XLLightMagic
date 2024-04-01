@@ -9,9 +9,9 @@ import UIKit
 
 let NORMAL_BASE_COLOR: UIColor = UIColor(r: 153, g:153, b: 153)
 let SELECT_BASE_COLOR: UIColor = UIColor(r: 255, g: 255, b: 255)
-let glt_sliderDefaultWidth: CGFloat = 40.0001 //加小数点，如果外部正好设置为40的高度，内部会认为还是自动适配宽度
+let x_sliderDefaultWidth: CGFloat = 40.0001 //加小数点，如果外部正好设置为40的高度，内部会认为还是自动适配宽度
 
-public class XPageLayout: NSObject {
+public class XPageConfig: NSObject {
     
     /**
      自定义每一个item的宽，如果有值内部将不再计算每一个item的宽
@@ -42,7 +42,7 @@ public class XPageLayout: NSObject {
     @objc public lazy var sliderHeight: CGFloat = 44.0
     
     /** 单个滑块的宽度, 一旦设置，将不再自动计算宽度，而是固定为你传递的值 **/
-    @objc public lazy var sliderWidth: CGFloat = glt_sliderDefaultWidth
+    @objc public lazy var sliderWidth: CGFloat = x_sliderDefaultWidth
     
     /**
      * 如果刚开始的布局不希望从最左边开始， 只想平均分配在整个宽度中，设置它为true
@@ -89,7 +89,7 @@ public class XPageLayout: NSObject {
     /** pageView的内容ScrollView是否显示HorizontalScrollIndicator **/
     @objc public lazy var showsHorizontalScrollIndicator: Bool = true
     
-    /** 是否悬停 默认为true开启悬停 此属性仅对LTSimpleManager有效 关闭时记得修改viewControll的frame**/
+    /** 是否悬停 默认为true开启悬停 此属性仅对XPageLayoutManager有效 关闭时记得修改viewControll的frame**/
     @objc public lazy var isHovered: Bool = true
     
     /** 内部使用 - 外界不需要调用 **/

@@ -54,7 +54,7 @@ class TestVC:XBaseViewController {
     
     override func configUI() {
         view.addSubview(tableView)
-        self.glt_scrollView = self.tableView
+        self.x_scrollView = self.tableView
         
         tableView.snp.makeConstraints {
             $0.edges.equalTo(self.view.xsnp.edges).priority(.low)

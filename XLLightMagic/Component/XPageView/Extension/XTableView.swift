@@ -1,18 +1,18 @@
 //
-//  LTTableView.swift
+//  XTableView.swift
 //  XLLightMagic
 //
 //  Created by admin on 2024/4/1.
 //
 
 import UIKit
-/// 外界可以继承自LTTableView做一些特殊处理
-public class LTTableView: UITableView, UIGestureRecognizerDelegate {
+/// 外界可以继承自XTableView做一些特殊处理
+public class XTableView: UITableView, UIGestureRecognizerDelegate {
    
     /// 滑动是否是simpleManager（即是headerView）？否则滑动的是cell上的pageView
     private var isScrollSimple = false
     
-    /** 如果LTPageView 与 LTSimple结合使用 需要将它设置为true */
+    /** 如果XPageView 与 XPageLayout结合使用 需要将它设置为true */
     @objc var isSimpeMix = false
     
     /** 是否到了边缘 - 当到了边缘的时候也不能滑动 */

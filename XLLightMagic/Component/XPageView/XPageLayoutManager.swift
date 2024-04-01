@@ -7,15 +7,15 @@
 
 import UIKit
 
-@objc public protocol LTSimpleScrollViewDelegate: AnyObject {
-    @objc optional func glt_scrollViewDidScroll(_ scrollView: UIScrollView)
-    @objc optional func glt_scrollViewWillBeginDragging(_ scrollView: UIScrollView)
-    @objc optional func glt_scrollViewWillBeginDecelerating(_ scrollView: UIScrollView)
-    @objc optional func glt_scrollViewDidEndDecelerating(_ scrollView: UIScrollView)
-    @objc optional func glt_scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool)
-    @objc optional func glt_scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView)
+@objc public protocol XSimpleScrollViewDelegate: AnyObject {
+    @objc optional func x_scrollViewDidScroll(_ scrollView: UIScrollView)
+    @objc optional func x_scrollViewWillBeginDragging(_ scrollView: UIScrollView)
+    @objc optional func x_scrollViewWillBeginDecelerating(_ scrollView: UIScrollView)
+    @objc optional func x_scrollViewDidEndDecelerating(_ scrollView: UIScrollView)
+    @objc optional func x_scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool)
+    @objc optional func x_scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView)
     //刷新tableView的代理方法
-    @objc optional func glt_refreshScrollView(_ scrollView: UIScrollView, _ index: Int);
+    @objc optional func x_refreshScrollView(_ scrollView: UIScrollView, _ index: Int);
 }
 
 public class XPageLayoutManager: UIView {
@@ -27,9 +27,9 @@ public class XPageLayoutManager: UIView {
     }
     
     /* 动态改变header的高度 */
-    @objc public var glt_headerHeight: CGFloat = 0.0 {
+    @objc public var x_headerHeight: CGFloat = 0.0 {
         didSet {
-            kHeaderHeight = CGFloat(Int(glt_headerHeight))
+            kHeaderHeight = CGFloat(Int(x_headerHeight))
             if layout.isHovered == false {
                 hoverY = 0.0
                 kHeaderHeight += self.layout.sliderHeight
@@ -40,15 +40,15 @@ public class XPageLayoutManager: UIView {
         }
     }
     
-    public typealias LTSimpleDidSelectIndexHandle = (Int) -> Void
-    @objc public var sampleDidSelectIndexHandle: LTSimpleDidSelectIndexHandle?
-    @objc public func didSelectIndexHandle(_ handle: LTSimpleDidSelectIndexHandle?) {
+    public typealias XSimpleDidSelectIndexHandle = (Int) -> Void
+    @objc public var sampleDidSelectIndexHandle: XSimpleDidSelectIndexHandle?
+    @objc public func didSelectIndexHandle(_ handle: XSimpleDidSelectIndexHandle?) {
         sampleDidSelectIndexHandle = handle
     }
     
-    public typealias LTSimpleRefreshTableViewHandle = (UIScrollView, Int) -> Void
-    @objc public var simpleRefreshTableViewHandle: LTSimpleRefreshTableViewHandle?
-    @objc public func refreshTableViewHandle(_ handle: LTSimpleRefreshTableViewHandle?) {
+    public typealias XSimpleRefreshTableViewHandle = (UIScrollView, Int) -> Void
+    @objc public var simpleRefreshTableViewHandle: XSimpleRefreshTableViewHandle?
+    @objc public func refreshTableViewHandle(_ handle: XSimpleRefreshTableViewHandle?) {
         simpleRefreshTableViewHandle = handle
     }
     
@@ -67,10 +67,10 @@ public class XPageLayoutManager: UIView {
     //设置悬停位置Y值
     @objc public var hoverY: CGFloat = 0
     
-    /* LTSimple的scrollView上下滑动监听 */
-    @objc public weak var delegate: LTSimpleScrollViewDelegate?
+    /* XSimple的scrollView上下滑动监听 */
+    @objc public weak var delegate: XSimpleScrollViewDelegate?
     
-    /** 如果LTPageView 与 LTSimple结合使用 需要将它设置为true */
+    /** 如果XPageView 与 XSimple结合使用 需要将它设置为true */
     @objc public var isSimpeMix = false {
         didSet {
             pageView.isSimpeMix = isSimpeMix
@@ -83,15 +83,15 @@ public class XPageLayoutManager: UIView {
     private var headerView: UIView?
     private var viewControllers: [UIViewController]
     private var titles: [String]
-    private var layout: XPageLayout
+    private var layout: XPageConfig
     private weak var currentViewController: UIViewController?
-    private var pageView: LTPageView!
+    private var pageView: XPageView!
     private var currentSelectIndex: Int = 0
     private var titleView: XPageTitleView!
     private var itemViewClass: XPageTitleItem.Type?
     
-    private lazy var tableView: LTTableView = {
-        let tableView = LTTableView(frame: CGRect(x: 0, y: 0, width: bounds.width, height: bounds.height), style:.plain)
+    private lazy var tableView: XTableView = {
+        let tableView = XTableView(frame: CGRect(x: 0, y: 0, width: bounds.width, height: bounds.height), style:.plain)
         tableView.delegate = self
         tableView.dataSource = self
         tableView.showsVerticalScrollIndicator = false
@@ -101,7 +101,7 @@ public class XPageLayoutManager: UIView {
         return tableView
     }()
     
-    @objc public init(frame: CGRect, viewControllers: [UIViewController], titles: [String], currentViewController:UIViewController, layout: XPageLayout, titleView: XPageTitleView? = nil, itemViewClass: XPageTitleItem.Type? = nil) {
+    @objc public init(frame: CGRect, viewControllers: [UIViewController], titles: [String], currentViewController:UIViewController, layout: XPageConfig, titleView: XPageTitleView? = nil, itemViewClass: XPageTitleItem.Type? = nil) {
         UIScrollView.initializeOnce()
         self.viewControllers = viewControllers
         self.titles = titles
@@ -116,7 +116,7 @@ public class XPageLayoutManager: UIView {
         createSubViews()
     }
     
-    @objc public convenience init(frame: CGRect, viewControllers: [UIViewController], titles: [String], currentViewController:UIViewController, layout: XPageLayout) {
+    @objc public convenience init(frame: CGRect, viewControllers: [UIViewController], titles: [String], currentViewController:UIViewController, layout: XPageConfig) {
         self.init(frame: frame, viewControllers: viewControllers, titles: titles, currentViewController: currentViewController, layout: layout, titleView: nil)
     }
     
@@ -142,10 +142,10 @@ extension XPageLayoutManager {
 
 extension XPageLayoutManager {
     
-    private func createPageViewConfig(currentViewController:UIViewController, layout: XPageLayout, titleView: XPageTitleView?, itemViewClass: XPageTitleItem.Type?) -> LTPageView {
-        let pageView = LTPageView(frame: self.bounds, currentViewController: currentViewController, viewControllers: viewControllers, titles: titles, layout:layout, itemViewClass: itemViewClass)
+    private func createPageViewConfig(currentViewController:UIViewController, layout: XPageConfig, titleView: XPageTitleView?, itemViewClass: XPageTitleItem.Type?) -> XPageView {
+        let pageView = XPageView(frame: self.bounds, currentViewController: currentViewController, viewControllers: viewControllers, titles: titles, layout:layout, itemViewClass: itemViewClass)
         if titles.count != 0 {
-            pageView.glt_createViewController(0)
+            pageView.x_createViewController(0)
         }
         pageView.gestureRecognizerEnabledHandle = {[weak self] isEnabled in
             self?.tableView.isEnabled = isEnabled
@@ -154,13 +154,13 @@ extension XPageLayoutManager {
     }
 }
 
-extension XPageLayoutManager: LTPageViewDelegate {
+extension XPageLayoutManager: XPageViewDelegate {
     
-    public func glt_scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+    public func x_scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         tableView.isScrollEnabled = false
     }
     
-    public func glt_scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+    public func x_scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         tableView.isScrollEnabled = true
     }
     
@@ -184,9 +184,9 @@ extension XPageLayoutManager {
     
     private func contentScrollViewScrollConfig(_ viewController: UIViewController) {
         if self.contentTableView == nil {
-            self.contentTableView = viewController.glt_scrollView
+            self.contentTableView = viewController.x_scrollView
         }
-        viewController.glt_scrollView?.scrollHandle = {[weak self] scrollView in
+        viewController.x_scrollView?.scrollHandle = {[weak self] scrollView in
             guard let `self` = self else { return }
             self.contentTableView = scrollView
             if self.tableView.contentOffset.y  < self.kHeaderHeight - self.hoverY {
@@ -207,7 +207,7 @@ extension XPageLayoutManager {
                 self.tableView.contentInset = .zero
             })
             self.simpleRefreshTableViewHandle?(self.tableView, self.currentSelectIndex)
-            self.delegate?.glt_refreshScrollView?(self.tableView, self.currentSelectIndex)
+            self.delegate?.x_refreshScrollView?(self.tableView, self.currentSelectIndex)
         }
         
     }
@@ -235,7 +235,7 @@ extension XPageLayoutManager: UITableViewDelegate {
      * 当 大于 kHeaderHeight - hoverY 的时候， 滑动的是内容ScrollView，此时将底部tableView的contentoffset y固定为kHeaderHeight - hoverY
      */
     public func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        delegate?.glt_scrollViewDidScroll?(scrollView)
+        delegate?.x_scrollViewDidScroll?(scrollView)
         guard scrollView == tableView, let contentTableView = contentTableView else { return }
         let offsetY = scrollView.contentOffset.y
         if contentTableView.contentOffset.y > 0 || offsetY > kHeaderHeight - hoverY {
@@ -244,30 +244,30 @@ extension XPageLayoutManager: UITableViewDelegate {
         //滑动期间将其他的内容scrollView contentOffset设置为0
         if scrollView.contentOffset.y < kHeaderHeight - hoverY {
             for viewController in viewControllers {
-                guard viewController.glt_scrollView != scrollView else { continue }
-                viewController.glt_scrollView?.contentOffset = .zero
+                guard viewController.x_scrollView != scrollView else { continue }
+                viewController.x_scrollView?.contentOffset = .zero
             }
         }
     }
     
     public func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-        delegate?.glt_scrollViewWillBeginDragging?(scrollView)
+        delegate?.x_scrollViewWillBeginDragging?(scrollView)
     }
     
     public func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
-        delegate?.glt_scrollViewWillBeginDecelerating?(scrollView)
+        delegate?.x_scrollViewWillBeginDecelerating?(scrollView)
     }
     
     public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        delegate?.glt_scrollViewDidEndDecelerating?(scrollView)
+        delegate?.x_scrollViewDidEndDecelerating?(scrollView)
     }
     
     public func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        delegate?.glt_scrollViewDidEndDragging?(scrollView, willDecelerate: decelerate)
+        delegate?.x_scrollViewDidEndDragging?(scrollView, willDecelerate: decelerate)
     }
     
     public func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
-        delegate?.glt_scrollViewDidEndScrollingAnimation?(scrollView)
+        delegate?.x_scrollViewDidEndScrollingAnimation?(scrollView)
     }
     
 }
@@ -293,7 +293,7 @@ extension XPageLayoutManager: UITableViewDataSource {
 extension XPageLayoutManager {
     private func deallocConfig() {
         for viewController in viewControllers {
-            viewController.glt_scrollView?.delegate = nil
+            viewController.x_scrollView?.delegate = nil
         }
     }
 }
