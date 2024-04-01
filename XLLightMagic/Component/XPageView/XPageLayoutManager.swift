@@ -101,6 +101,15 @@ public class XPageLayoutManager: UIView {
         return tableView
     }()
     
+    /// 外部调用，统一布局
+    /// - Parameters:
+    ///   - frame: 视图Frame
+    ///   - viewControllers: 控制器数组，和标题一一对应
+    ///   - titles: 标题数组，和控制器一一对应
+    ///   - currentViewController: 当前控制器
+    ///   - layout: 布局模型 XPageConfig
+    ///   - titleView: 自定义的标题栏
+    ///   - itemViewClass: 自定义滑块
     @objc public init(frame: CGRect, viewControllers: [UIViewController], titles: [String], currentViewController:UIViewController, layout: XPageConfig, titleView: XPageTitleView? = nil, itemViewClass: XPageTitleItem.Type? = nil) {
         UIScrollView.initializeOnce()
         self.viewControllers = viewControllers

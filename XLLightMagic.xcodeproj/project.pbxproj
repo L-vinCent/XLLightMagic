@@ -441,13 +441,10 @@
 		841CE13F2BB6C8050031A93A /* XPageView */ = {
 			isa = PBXGroup;
 			children = (
-				84B804FE2BBA998C00FE5B8B /* Extension */,
 				84B804FC2BBA98AE00FE5B8B /* XPageLayoutManager.swift */,
-				841CE1402BB6C8BF0031A93A /* XPageConfig.swift */,
-				841CE1422BB6E2710031A93A /* XPageTitleItem.swift */,
-				84B804F42BBA54E500FE5B8B /* XPageTitleView.swift */,
-				84B804F62BBA8A9200FE5B8B /* XPageScrollView.swift */,
-				84B804F82BBA8B3600FE5B8B /* XPageView.swift */,
+				84B805062BBADC0D00FE5B8B /* Config */,
+				84B805052BBADBF500FE5B8B /* View */,
+				84B804FE2BBA998C00FE5B8B /* Extension */,
 			);
 			path = XPageView;
 			sourceTree = "<group>";
@@ -471,6 +468,25 @@
 				84B805032BBAB47A00FE5B8B /* XDispatchQueue.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		84B805052BBADBF500FE5B8B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				841CE1422BB6E2710031A93A /* XPageTitleItem.swift */,
+				84B804F42BBA54E500FE5B8B /* XPageTitleView.swift */,
+				84B804F62BBA8A9200FE5B8B /* XPageScrollView.swift */,
+				84B804F82BBA8B3600FE5B8B /* XPageView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		84B805062BBADC0D00FE5B8B /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				841CE1402BB6C8BF0031A93A /* XPageConfig.swift */,
+			);
+			path = Config;
 			sourceTree = "<group>";
 		};
 		84BDCF442BB116D200F43383 /* Resources */ = {
