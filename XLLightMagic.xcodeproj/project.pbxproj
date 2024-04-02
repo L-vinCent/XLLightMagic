@@ -51,6 +51,14 @@
 		84B805002BBA99CB00FE5B8B /* XTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B804FF2BBA99CB00FE5B8B /* XTableView.swift */; };
 		84B805022BBA9E0300FE5B8B /* XScrollExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B805012BBA9E0300FE5B8B /* XScrollExtension.swift */; };
 		84B805042BBAB47A00FE5B8B /* XDispatchQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B805032BBAB47A00FE5B8B /* XDispatchQueue.swift */; };
+		84B805092BBBA1B800FE5B8B /* XMineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B805082BBBA1B800FE5B8B /* XMineViewController.swift */; };
+		84B8050C2BBBA8E500FE5B8B /* XHomeTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B8050B2BBBA8E500FE5B8B /* XHomeTopView.swift */; };
+		84B8050E2BBBB09B00FE5B8B /* XHomeBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B8050D2BBBB09B00FE5B8B /* XHomeBannerView.swift */; };
+		84B805102BBBB15D00FE5B8B /* bg_home_banner.png in Resources */ = {isa = PBXBuildFile; fileRef = 84B8050F2BBBB15D00FE5B8B /* bg_home_banner.png */; };
+		84B805132BBBE85700FE5B8B /* XHomePuzzleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B805122BBBE85700FE5B8B /* XHomePuzzleListViewController.swift */; };
+		84B805152BBBE9B700FE5B8B /* XPuzzlePageListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B805142BBBE9B700FE5B8B /* XPuzzlePageListCell.swift */; };
+		84B805172BBBF0BA00FE5B8B /* XHomeBaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B805162BBBF0BA00FE5B8B /* XHomeBaseCell.swift */; };
+		84B805192BBBF96B00FE5B8B /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B805182BBBF96B00FE5B8B /* UIButtonExtension.swift */; };
 		84BDCF5E2BB116F500F43383 /* number_five_style_1.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84BDCF452BB116F500F43383 /* number_five_style_1.plist */; };
 		84BDCF5F2BB116F500F43383 /* number_five_style_2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84BDCF462BB116F500F43383 /* number_five_style_2.plist */; };
 		84BDCF602BB116F500F43383 /* number_five_style_3.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84BDCF472BB116F500F43383 /* number_five_style_3.plist */; };
@@ -187,6 +195,14 @@
 		84B804FF2BBA99CB00FE5B8B /* XTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XTableView.swift; sourceTree = "<group>"; };
 		84B805012BBA9E0300FE5B8B /* XScrollExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XScrollExtension.swift; sourceTree = "<group>"; };
 		84B805032BBAB47A00FE5B8B /* XDispatchQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XDispatchQueue.swift; sourceTree = "<group>"; };
+		84B805082BBBA1B800FE5B8B /* XMineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMineViewController.swift; sourceTree = "<group>"; };
+		84B8050B2BBBA8E500FE5B8B /* XHomeTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XHomeTopView.swift; sourceTree = "<group>"; };
+		84B8050D2BBBB09B00FE5B8B /* XHomeBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XHomeBannerView.swift; sourceTree = "<group>"; };
+		84B8050F2BBBB15D00FE5B8B /* bg_home_banner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_home_banner.png; sourceTree = "<group>"; };
+		84B805122BBBE85700FE5B8B /* XHomePuzzleListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XHomePuzzleListViewController.swift; sourceTree = "<group>"; };
+		84B805142BBBE9B700FE5B8B /* XPuzzlePageListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XPuzzlePageListCell.swift; sourceTree = "<group>"; };
+		84B805162BBBF0BA00FE5B8B /* XHomeBaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XHomeBaseCell.swift; sourceTree = "<group>"; };
+		84B805182BBBF96B00FE5B8B /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		84BDCF452BB116F500F43383 /* number_five_style_1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = number_five_style_1.plist; sourceTree = "<group>"; };
 		84BDCF462BB116F500F43383 /* number_five_style_2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = number_five_style_2.plist; sourceTree = "<group>"; };
 		84BDCF472BB116F500F43383 /* number_five_style_3.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = number_five_style_3.plist; sourceTree = "<group>"; };
@@ -366,6 +382,7 @@
 				840EC81C2BAACC980049B06A /* UIImageExtensions.swift */,
 				840EC8182BAACC980049B06A /* UIViewExtension.swift */,
 				841CE11E2BB41B2D0031A93A /* UIScrollViewExtensions.swift */,
+				84B805182BBBF96B00FE5B8B /* UIButtonExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -381,6 +398,7 @@
 		840EC80E2BAAC7610049B06A /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				84B805072BBBA19D00FE5B8B /* Mine */,
 				841CE13C2BB6A5B60031A93A /* Home */,
 				841CE1272BB50A7D0031A93A /* WebIDPhoto */,
 				84CB9E9D2BAC20D300E29794 /* XTestImageEditView.swift */,
@@ -433,7 +451,8 @@
 		841CE13C2BB6A5B60031A93A /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				841CE13D2BB6A5CF0031A93A /* XHomeViewController.swift */,
+				84B805112BBBE7D300FE5B8B /* ViewController */,
+				84B8050A2BBBA85200FE5B8B /* View */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -489,9 +508,38 @@
 			path = Config;
 			sourceTree = "<group>";
 		};
+		84B805072BBBA19D00FE5B8B /* Mine */ = {
+			isa = PBXGroup;
+			children = (
+				84B805082BBBA1B800FE5B8B /* XMineViewController.swift */,
+			);
+			path = Mine;
+			sourceTree = "<group>";
+		};
+		84B8050A2BBBA85200FE5B8B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				84B8050B2BBBA8E500FE5B8B /* XHomeTopView.swift */,
+				84B8050D2BBBB09B00FE5B8B /* XHomeBannerView.swift */,
+				84B805142BBBE9B700FE5B8B /* XPuzzlePageListCell.swift */,
+				84B805162BBBF0BA00FE5B8B /* XHomeBaseCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		84B805112BBBE7D300FE5B8B /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				841CE13D2BB6A5CF0031A93A /* XHomeViewController.swift */,
+				84B805122BBBE85700FE5B8B /* XHomePuzzleListViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		84BDCF442BB116D200F43383 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				84B8050F2BBBB15D00FE5B8B /* bg_home_banner.png */,
 				841CE1252BB50A550031A93A /* 11.html */,
 				84BDCFE32BB16EF200F43383 /* number_three_style_3.json */,
 				84BDCFAA2BB118C000F43383 /* storyboard */,
@@ -798,6 +846,7 @@
 				84BDCFB62BB118C000F43383 /* makecards_puzzle5_storyboard6_icon@2x.png in Resources */,
 				84BDCF722BB116F500F43383 /* number_two_style_3.plist in Resources */,
 				84BDCFB72BB118C000F43383 /* makecards_puzzle4_storyboard1_icon.png in Resources */,
+				84B805102BBBB15D00FE5B8B /* bg_home_banner.png in Resources */,
 				84BDCFC32BB118C000F43383 /* makecards_puzzle3_storyboard1_icon.png in Resources */,
 				84BDCFC62BB118C000F43383 /* makecards_puzzle3_storyboard2_icon@2x.png in Resources */,
 				84BDCFAC2BB118C000F43383 /* makecards_puzzle5_storyboard1_icon@2x.png in Resources */,
@@ -889,6 +938,9 @@
 				841CE1292BB50D7E0031A93A /* XIDPhotoWebViewController.swift in Sources */,
 				84B804FD2BBA98AE00FE5B8B /* XPageLayoutManager.swift in Sources */,
 				840EC8222BAACC980049B06A /* UIBarButtonItemExtension.swift in Sources */,
+				84B805172BBBF0BA00FE5B8B /* XHomeBaseCell.swift in Sources */,
+				84B8050C2BBBA8E500FE5B8B /* XHomeTopView.swift in Sources */,
+				84B8050E2BBBB09B00FE5B8B /* XHomeBannerView.swift in Sources */,
 				84BDCFE02BB11E9200F43383 /* XBoardLayoutCell.swift in Sources */,
 				840EC8292BAAD0620049B06A /* XNavigationController.swift in Sources */,
 				840EC8132BAACBC10049B06A /* Global.swift in Sources */,
@@ -896,9 +948,11 @@
 				84CB9E9E2BAC20D300E29794 /* XTestImageEditView.swift in Sources */,
 				840EC8232BAACC980049B06A /* DispatchQueueExtension.swift in Sources */,
 				841CE1322BB58B090031A93A /* XFilterManager.swift in Sources */,
+				84B805192BBBF96B00FE5B8B /* UIButtonExtension.swift in Sources */,
 				84BDCFE82BB179F100F43383 /* XTemplateTools.swift in Sources */,
 				84B804FB2BBA94DE00FE5B8B /* XPageVCExtention.swift in Sources */,
 				840EC8242BAACC980049B06A /* DictionaryExtension.swift in Sources */,
+				84B805152BBBE9B700FE5B8B /* XPuzzlePageListCell.swift in Sources */,
 				841CE1432BB6E2710031A93A /* XPageTitleItem.swift in Sources */,
 				840EC8272BAACF9D0049B06A /* XTabBarController.swift in Sources */,
 				841CE13E2BB6A5CF0031A93A /* XHomeViewController.swift in Sources */,
@@ -911,9 +965,11 @@
 				84B805042BBAB47A00FE5B8B /* XDispatchQueue.swift in Sources */,
 				840EC82B2BAAD0D30049B06A /* XWebViewController.swift in Sources */,
 				840EC81E2BAACC980049B06A /* StringExtension.swift in Sources */,
+				84B805132BBBE85700FE5B8B /* XHomePuzzleListViewController.swift in Sources */,
 				84BDCFDC2BB11D1A00F43383 /* XBaseCollectionViewCell.swift in Sources */,
 				84B805022BBA9E0300FE5B8B /* XScrollExtension.swift in Sources */,
 				840EC82D2BAAD7670049B06A /* TestVC.swift in Sources */,
+				84B805092BBBA1B800FE5B8B /* XMineViewController.swift in Sources */,
 				84B805002BBA99CB00FE5B8B /* XTableView.swift in Sources */,
 				84CB9EA42BAC5C9300E29794 /* XImageEditView.swift in Sources */,
 				840EC8202BAACC980049B06A /* UIColorExtension.swift in Sources */,
@@ -1079,6 +1135,7 @@
 				DEVELOPMENT_TEAM = 52V34UT472;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = XLLightMagic/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "光影魔术手";
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "";
@@ -1113,6 +1170,7 @@
 				DEVELOPMENT_TEAM = 52V34UT472;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = XLLightMagic/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "光影魔术手";
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "";

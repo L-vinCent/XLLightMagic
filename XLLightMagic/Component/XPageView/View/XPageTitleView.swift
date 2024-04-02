@@ -92,8 +92,14 @@ public typealias XItemViewClassHandle = () -> XPageTitleItem
     
     private lazy var sliderLineView: GradientView = {
         let sliderLineView = GradientView(frame: CGRect(x: layout.lrMargin, y: bounds.height - layout.bottomLineHeight - layout.pageBottomLineHeight, width: 0, height: layout.bottomLineHeight))
-//        sliderLineView.backgroundColor = layout.bottomLineColor
-        sliderLineView.setGradient(colors: layout.bottomLineColors)
+        if(layout.bottomLineColors.count > 1){
+            //渐变色
+            sliderLineView.setGradient(colors: layout.bottomLineColors)
+        }else{
+            //单一色
+            let color = layout.bottomLineColors.first
+            sliderLineView.backgroundColor = color
+        }
         sliderLineView.isHidden = layout.isHiddenSlider
         return sliderLineView
     }()

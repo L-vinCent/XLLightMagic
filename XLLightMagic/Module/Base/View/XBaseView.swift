@@ -12,6 +12,7 @@ class XBaseView : UIView {
     
     init() {
         super.init(frame: .zero)
+        self.backgroundColor = UIColor.themeBackground
         configUI()
     }
     

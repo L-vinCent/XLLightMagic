@@ -25,7 +25,7 @@ class XImageAndTextCell: XBaseCollectionViewCell {
     private lazy var textLbl : UILabel = {
         let lbl = UILabel()
         lbl.textColor = UIColor.normalTextColor
-        lbl.font = UIFont.normalFont
+        lbl.font = UIFont.regularFont
         lbl.textAlignment = .center
         contentView.addSubview(lbl)
         return lbl

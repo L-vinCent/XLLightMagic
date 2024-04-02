@@ -14,57 +14,40 @@ let SettingBarHeight = 46.0
 class XHomeViewController:XBaseViewController{
     
     //设置默认布局，具体设置请查看XPageConfig类
+    lazy var settingView: XHomeTopView = {
+        let view = XHomeTopView()
+        return view
+    }()
     
-    
-    lazy var settingView: UIView = {
-        let view = UIView(frame: CGRect(x: 0, y: UIDevice.xd_safeDistanceTop(), width: view.width, height: SettingBarHeight))
-           view.backgroundColor = UIColor.themeBackground
-           view.addSubview(self.button)
-           return view
-       }()
-
-       lazy var button: UIButton = {
-           let button = UIButton()
-           button.frame = CGRectMake(0, 0, SettingBarHeight, SettingBarHeight)
-           button.setImage(UIImage(named: "icon_home_setting"), for: .normal)
-           button.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
-           return button
-       }()
-    
-    private lazy var titleView: XPageTitleView = {
-        let layout = XPageConfig()
-        layout.bottomLineColors = UIColor.gradientColors
-        layout.titleViewBgColor = UIColor.themeBackground
-        let titleView = XPageTitleView(frame: CGRect(x: 0, y:UIDevice.xd_safeDistanceTop()+SettingBarHeight , width: view.width, height: layout.sliderHeight), titles: ["测试","哈哈哈哈哈哈","asdasd","asdasd","asdasd"], layout: layout, itemViewClass: nil)
-        return titleView
+    lazy var bannerView: XHomeBannerView = {
+        let view = XHomeBannerView()
+        return view
     }()
     
     private lazy var titles: [String] = {
-        return ["此处标题View支持", "自定义", "查看", "XPageView具体使用"]
+        return ["证件照", "拼图"]
     }()
     
     private lazy var viewControllers: [UIViewController] = {
-        var vcs = [UIViewController]()
-        for _ in titles {
-            vcs.append(TestVC())
-        }
-        return vcs
+        return [XHomePuzzleListViewController(),XHomePuzzleListViewController()]
     }()
     
     private lazy var layout: XPageConfig = {
         let layout = XPageConfig()
-        layout.bottomLineColors = UIColor.gradientColors
+        layout.bottomLineColors = [UIColor.mainBlueColor]
         layout.titleViewBgColor = UIColor.themeBackground
         layout.bottomLineCornerRadius = 2.0
         layout.isColorAnimation = true
         layout.lrMargin = 20
         layout.sliderWidth = 40
-        
+        layout.titleFont = UIFont.PingFangSemiBold(size: 15)
+        layout.scale = 1.2
+        layout.titleMargin = 35
         return layout
     }()
     
     private func managerReact() -> CGRect {
-        let Y: CGFloat = UIDevice.xd_safeDistanceTop()+46
+        let Y: CGFloat = UIDevice.xd_safeDistanceTop()
         let H: CGFloat = view.height - Y - UIDevice.xp_safeDistanceBottom()
         return CGRect(x: 0, y: Y, width: view.bounds.width, height: H)
     }
@@ -103,7 +86,7 @@ extension XHomeViewController {
         //MARK: headerView设置
         simpleManager.configHeaderView {[weak self] in
             guard let strongSelf = self else { return nil }
-            let headerView = strongSelf.testLabel()
+            let headerView = strongSelf.headView()
             return headerView
         }
         
@@ -139,14 +122,27 @@ extension XHomeViewController: XSimpleScrollViewDelegate {
 }
 
 extension XHomeViewController {
-    private func testLabel() -> UILabel {
-        let headerView = UILabel(frame: CGRect(x: 0, y: 0, width: self.view.bounds.width, height: 180))
-        headerView.backgroundColor = UIColor.red
-        headerView.text = "点击响应事件"
-        headerView.textColor = UIColor.white
-        headerView.textAlignment = .center
-        headerView.isUserInteractionEnabled = true
-        headerView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.tapLabel(_:))))
-        return headerView
+    
+    private func headView() -> UIView {
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: view.width, height: 236))
+        view.addSubview(self.settingView)
+        view.addSubview(self.bannerView)
+        
+        settingView.snp.makeConstraints { make in
+            make.top.left.right.equalToSuperview()
+            make.height.equalTo(46)
+        }
+        
+        bannerView.snp.makeConstraints { make in
+            make.left.right.equalToSuperview()
+            make.top.equalTo(settingView.snp_bottom)
+            make.height.equalTo(188)
+        }
+        
+        return view
     }
+    
+    
+   
+    
 }

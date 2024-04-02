@@ -9,7 +9,7 @@ import UIKit
 
 let NORMAL_BASE_COLOR: UIColor = UIColor(r: 153, g:153, b: 153)
 let SELECT_BASE_COLOR: UIColor = UIColor(r: 255, g: 255, b: 255)
-let x_sliderDefaultWidth: CGFloat = 40.0001 //加小数点，如果外部正好设置为40的高度，内部会认为还是自动适配宽度
+let x_sliderDefaultWidth: CGFloat = 40.0001 //加小数点，因为如果外部正好设置为40的高度，内部会认为还是自动适配宽度
 
 public class XPageConfig: NSObject {
     
@@ -22,6 +22,9 @@ public class XPageConfig: NSObject {
     
     /** pageView背景颜色 **/
     @objc public var titleViewBgColor: UIColor? = UIColor.black
+    
+    /** mainTableView 背景颜色 **/
+    @objc public var mainTableViewBgColor: UIColor? = UIColor.black
     
     /** 标题颜色，请使用RGB赋值 **/
     @objc public var titleColor: UIColor? = NORMAL_BASE_COLOR
@@ -63,7 +66,7 @@ public class XPageConfig: NSObject {
     @objc public lazy var titleMargin: CGFloat = 30.0
     
     /** 距离最左边和最右边的距离 **/
-    @objc public lazy var lrMargin: CGFloat = 10.0
+    @objc public lazy var lrMargin: CGFloat = 15.0
     
     /** 滑动过程中是否放大标题 **/
     @objc public lazy var isNeedScale: Bool = true

@@ -16,9 +16,17 @@ extension UIColor {
     
     //主题背景黑
     class var themeBackground: UIColor {
-        return UIColor.hex(hexString:"#1E1E1E")
+        return UIColor.hex(hexString:"#000000")
     }
 
+    class var mainBlueColor:UIColor{
+        return UIColor.hex(hexString:"#3742FA")
+    }
+    
+    class var fontWhiteColor:UIColor{
+        return UIColor.hex(hexString:"#FFFFFF")
+    }
+    
     //灰
     class var fontGray300: UIColor {
         return UIColor.hex(hexString:"#D4D4D4")
@@ -66,10 +74,26 @@ extension UIColor {
 }
 
 extension UIFont{
-    //常规大小字体
-    class var normalFont:UIFont{
-        return UIFont.systemFont(ofSize: 14)
+    //常规字体
+    class var regularFont:UIFont{
+        return Self.PingFangRegular(size: 15)
     }
+    
+    static func PingFangRegular(size: CGFloat) -> UIFont {
+        return UIFont(name: "PingFangSC-Regular", size: size) ?? UIFont.systemFont(ofSize: size)
+    }
+    static func PingFangBold(size: CGFloat) -> UIFont {
+        return UIFont(name: "PingFangSC-Bold", size: size) ?? UIFont.systemFont(ofSize: size)
+    }
+    
+    static func PingFangSemiBold(size: CGFloat) -> UIFont {
+        return UIFont(name: "PingFangSC-Semibold", size: size) ?? UIFont.systemFont(ofSize: size)
+    }
+    
+    static func PingFangMedium(size: CGFloat) -> UIFont {
+        return UIFont(name: "PingFangSC-Medium", size: size) ?? UIFont.systemFont(ofSize: size)
+    }
+    
 }
 
 extension String {

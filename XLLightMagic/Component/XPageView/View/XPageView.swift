@@ -90,7 +90,6 @@ public class XPageView: UIView, XPageViewHeaders {
     
     private lazy var titleView: XPageTitleView = {
         let titleView = XPageTitleView(frame: CGRect(x: 0, y: 0, width: width, height: layout.sliderHeight), titles: titles, layout: layout, itemViewClass: itemViewClass)
-        titleView.backgroundColor = layout.titleViewBgColor
         return titleView
     }()
     

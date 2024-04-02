@@ -96,6 +96,8 @@ public class XPageLayoutManager: UIView {
         tableView.dataSource = self
         tableView.showsVerticalScrollIndicator = false
         tableView.separatorStyle = .none
+        tableView.bounces = false
+        tableView.backgroundColor = layout.mainTableViewBgColor
         registerCell(tableView, UITableViewCell.self)
         
         return tableView
