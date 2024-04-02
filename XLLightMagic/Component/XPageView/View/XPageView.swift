@@ -98,6 +98,7 @@ public class XPageView: UIView, XPageViewHeaders {
         scrollView.contentSize = CGSize(width: width * CGFloat(self.titles.count), height: 0)
         scrollView.isPagingEnabled = true
         scrollView.delegate = self
+        scrollView.backgroundColor = layout.mainTableViewBgColor
         scrollView.bounces = layout.isShowBounces
         scrollView.isScrollEnabled = layout.isScrollEnabled
         scrollView.showsHorizontalScrollIndicator = layout.showsHorizontalScrollIndicator

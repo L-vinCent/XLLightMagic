@@ -1,50 +1,60 @@
 //
-//  XHomePuzzleListViewController.swift
+//  XMineViewController.swift
 //  XLLightMagic
 //
 //  Created by admin on 2024/4/2.
 //
 
+import Foundation
 import UIKit
-class XHomePuzzleListViewController:XBaseViewController{
+class XSettingViewController:XBaseViewController{
     
     private lazy var myArray: Array = {
         return [
-            ["title":"多格拼图","imageName":"icon_home_puzzles"],
-            ["title":"竖拼长图","imageName":"icon_home_puzzleVer"],
-            ["title":"横拼长图","imageName":"icon_home_puzzleHor"],
+            ["title":"意见反馈","subTitle":""],
+            ["title":"版本号","subTitle":"\(UIDevice.appVersion ?? "")"],
+            ["title":"隐私政策","subTitle":""],
+            ["title":"用户协议","subTitle":""],
         ]
     }()
+    
+    
     lazy var tableView: UITableView = {
-        
         let tw = UITableView(frame: .zero, style: .plain)
         tw.backgroundColor = UIColor.themeBackground
         tw.delegate = self
         tw.dataSource = self
-        tw.register(cellType: XPuzzlePageListCell.self)
+        tw.register(cellType: XSettingCell.self)
         return tw
     }()
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.x_scrollView = self.tableView
+        
+        //导航栏点击
+        self.didNavClickHandle = {[weak self] in
+            guard let self = self else {return}
+            self.dismiss(animated: true)
+        }
+
     }
     override func configUI() {
-        view.addSubview(tableView)
+        view.addSubview(self.tableView)
+        let nav = addCustomNavView(title: "设置")
         
         tableView.snp.makeConstraints {
             $0.edges.equalTo(self.view.xsnp.edges).priority(.low)
-            $0.top.equalToSuperview().offset(44)
-//            $0.bottom.equalToSuperview()
+            $0.top.equalTo(nav.snp_bottom)
         }
         
     }
     
+    
 }
 
 
-extension XHomePuzzleListViewController: UITableViewDelegate, UITableViewDataSource {
+
+extension XSettingViewController: UITableViewDelegate, UITableViewDataSource {
     
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -55,30 +65,22 @@ extension XHomePuzzleListViewController: UITableViewDelegate, UITableViewDataSou
         
         return myArray.count
     }
-//
-//    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-//        return CGFloat.leastNormalMagnitude
-//    }
-//
-//
-//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        return nil
-//    }
+
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 76
+        return 80
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(for: indexPath, cellType: XPuzzlePageListCell.self)
-        
+        let cell = tableView.dequeueReusableCell(for: indexPath, cellType: XSettingCell.self)
         let dict: [String: String] = myArray[indexPath.row]
-        cell.iconUrl =  dict["imageName"] ?? ""
+        cell.subTitle =  dict["subTitle"] ?? ""
         cell.title = dict["title"] ?? ""
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+//        navigationController?.pushViewController(TestVC(), animated: true)
     }
     
 }

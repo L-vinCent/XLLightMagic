@@ -25,6 +25,7 @@
 		840EC8292BAAD0620049B06A /* XNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840EC8282BAAD0620049B06A /* XNavigationController.swift */; };
 		840EC82B2BAAD0D30049B06A /* XWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840EC82A2BAAD0D30049B06A /* XWebViewController.swift */; };
 		840EC82D2BAAD7670049B06A /* TestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840EC82C2BAAD7670049B06A /* TestVC.swift */; };
+		8415EBDD2BBC21A6002AE3F1 /* XSettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8415EBDC2BBC21A6002AE3F1 /* XSettingCell.swift */; };
 		841CE1192BB276AD0031A93A /* XProportionEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841CE1182BB276AD0031A93A /* XProportionEnum.swift */; };
 		841CE11B2BB3C14D0031A93A /* XEditContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841CE11A2BB3C14D0031A93A /* XEditContainerView.swift */; };
 		841CE11F2BB41B2D0031A93A /* UIScrollViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841CE11E2BB41B2D0031A93A /* UIScrollViewExtensions.swift */; };
@@ -51,7 +52,7 @@
 		84B805002BBA99CB00FE5B8B /* XTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B804FF2BBA99CB00FE5B8B /* XTableView.swift */; };
 		84B805022BBA9E0300FE5B8B /* XScrollExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B805012BBA9E0300FE5B8B /* XScrollExtension.swift */; };
 		84B805042BBAB47A00FE5B8B /* XDispatchQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B805032BBAB47A00FE5B8B /* XDispatchQueue.swift */; };
-		84B805092BBBA1B800FE5B8B /* XMineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B805082BBBA1B800FE5B8B /* XMineViewController.swift */; };
+		84B805092BBBA1B800FE5B8B /* XSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B805082BBBA1B800FE5B8B /* XSettingViewController.swift */; };
 		84B8050C2BBBA8E500FE5B8B /* XHomeTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B8050B2BBBA8E500FE5B8B /* XHomeTopView.swift */; };
 		84B8050E2BBBB09B00FE5B8B /* XHomeBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B8050D2BBBB09B00FE5B8B /* XHomeBannerView.swift */; };
 		84B805102BBBB15D00FE5B8B /* bg_home_banner.png in Resources */ = {isa = PBXBuildFile; fileRef = 84B8050F2BBBB15D00FE5B8B /* bg_home_banner.png */; };
@@ -170,6 +171,7 @@
 		840EC8282BAAD0620049B06A /* XNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XNavigationController.swift; sourceTree = "<group>"; };
 		840EC82A2BAAD0D30049B06A /* XWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XWebViewController.swift; sourceTree = "<group>"; };
 		840EC82C2BAAD7670049B06A /* TestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestVC.swift; sourceTree = "<group>"; };
+		8415EBDC2BBC21A6002AE3F1 /* XSettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XSettingCell.swift; sourceTree = "<group>"; };
 		841CE1182BB276AD0031A93A /* XProportionEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XProportionEnum.swift; sourceTree = "<group>"; };
 		841CE11A2BB3C14D0031A93A /* XEditContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XEditContainerView.swift; sourceTree = "<group>"; };
 		841CE11E2BB41B2D0031A93A /* UIScrollViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIScrollViewExtensions.swift; sourceTree = "<group>"; };
@@ -195,7 +197,7 @@
 		84B804FF2BBA99CB00FE5B8B /* XTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XTableView.swift; sourceTree = "<group>"; };
 		84B805012BBA9E0300FE5B8B /* XScrollExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XScrollExtension.swift; sourceTree = "<group>"; };
 		84B805032BBAB47A00FE5B8B /* XDispatchQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XDispatchQueue.swift; sourceTree = "<group>"; };
-		84B805082BBBA1B800FE5B8B /* XMineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMineViewController.swift; sourceTree = "<group>"; };
+		84B805082BBBA1B800FE5B8B /* XSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XSettingViewController.swift; sourceTree = "<group>"; };
 		84B8050B2BBBA8E500FE5B8B /* XHomeTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XHomeTopView.swift; sourceTree = "<group>"; };
 		84B8050D2BBBB09B00FE5B8B /* XHomeBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XHomeBannerView.swift; sourceTree = "<group>"; };
 		84B8050F2BBBB15D00FE5B8B /* bg_home_banner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_home_banner.png; sourceTree = "<group>"; };
@@ -511,7 +513,8 @@
 		84B805072BBBA19D00FE5B8B /* Mine */ = {
 			isa = PBXGroup;
 			children = (
-				84B805082BBBA1B800FE5B8B /* XMineViewController.swift */,
+				84B805082BBBA1B800FE5B8B /* XSettingViewController.swift */,
+				8415EBDC2BBC21A6002AE3F1 /* XSettingCell.swift */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -969,7 +972,7 @@
 				84BDCFDC2BB11D1A00F43383 /* XBaseCollectionViewCell.swift in Sources */,
 				84B805022BBA9E0300FE5B8B /* XScrollExtension.swift in Sources */,
 				840EC82D2BAAD7670049B06A /* TestVC.swift in Sources */,
-				84B805092BBBA1B800FE5B8B /* XMineViewController.swift in Sources */,
+				84B805092BBBA1B800FE5B8B /* XSettingViewController.swift in Sources */,
 				84B805002BBA99CB00FE5B8B /* XTableView.swift in Sources */,
 				84CB9EA42BAC5C9300E29794 /* XImageEditView.swift in Sources */,
 				840EC8202BAACC980049B06A /* UIColorExtension.swift in Sources */,
@@ -985,6 +988,7 @@
 				840EC8212BAACC980049B06A /* UIViewExtension.swift in Sources */,
 				840EC7F72BAAC6810049B06A /* AppDelegate.swift in Sources */,
 				84CB9EA02BAC239700E29794 /* XPuzzleViewController.swift in Sources */,
+				8415EBDD2BBC21A6002AE3F1 /* XSettingCell.swift in Sources */,
 				840EC8112BAACAF20049B06A /* XBaseViewController.swift in Sources */,
 				841CE1412BB6C8BF0031A93A /* XPageConfig.swift in Sources */,
 				849144D32BAFDEBC00444DD1 /* XNormalLayoutView.swift in Sources */,
@@ -1150,7 +1154,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = LightMagic.XLLightMagic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1185,7 +1189,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = LightMagic.XLLightMagic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

@@ -65,7 +65,10 @@ class XHomeViewController:XBaseViewController{
         simpleManagerConfig()
     }
     
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navBarHidden = true
+    }
     
 }
 
@@ -132,7 +135,16 @@ extension XHomeViewController {
             make.top.left.right.equalToSuperview()
             make.height.equalTo(46)
         }
-        
+        //设置按钮点击事件
+        settingView.didTapSettingHandle = { [weak self] in
+            guard let self = self else {return}
+//            let vc = XSettingViewController()
+            let nav = UINavigationController(rootViewController: XSettingViewController())
+//            vc.modalPresentationStyle = .fullScreen
+            nav.modalPresentationStyle = .fullScreen
+            self.present(nav, animated: true)
+            
+        }
         bannerView.snp.makeConstraints { make in
             make.left.right.equalToSuperview()
             make.top.equalTo(settingView.snp_bottom)

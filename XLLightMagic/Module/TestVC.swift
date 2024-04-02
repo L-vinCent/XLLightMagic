@@ -96,7 +96,7 @@ extension TestVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(for: indexPath, cellType: XBaseTableViewCell.self)
         cell.accessoryType = .disclosureIndicator
-        cell.selectionStyle = .default
+        
         let dict: [String: String] = xArray[indexPath.row]
         cell.textLabel?.text = dict["title"]
         return cell
